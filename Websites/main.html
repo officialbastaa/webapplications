@@ -10,98 +10,108 @@
 </head>
 
 <body>
-    <h1>Webseiten zum Anzeigen</h1>
-    <section>
-        <table>
-            <caption>Tabelle aller registrierten Nutzer</caption>
+    <!-- NAV BAR -->
+    <nav>
+        <div>
+            <img src="/Websites/images/menu-2.png" alt="burger menu button" class="navImg">
+            <img src="/Websites/images/einkaufswagen.png" alt="cart" class="navImg" id="cartImg">
+            <img src="/Websites/images/user.png" alt="user" class="navImg" id="userImg">
+            <h1 id="brandLogo">STUDENT COFFEE</h1>
+        </div>
+    </nav>
+    <!-- MAIN CONTENT -->
+    <div id="contentContainer">
+        <div class="insideContainer">
+            <!-- TABELLE 1 -->
+            <section>
+                <table>
+                    <caption>Tabelle aller registrierten Nutzer</caption>
+                    <br>
+                    <tr>
+                        <th>Name</th>
+                        <th>Vorname</th>
+                        <th style="width: 40%">Email</th>
+                    </tr>
+                    <tr>
+                        <td>Heufer-Umflauf</td>
+                        <td>Klaas</td>
+                        <td>klaas.hu@gmail.com</td>
+                    </tr>
+                    <tr>
+                        <td>Lundt</td>
+                        <td>Jakob</td>
+                        <td>j.lundt@gmail.com</td>
+                    </tr>
+                    <tr>
+                        <td>Schmitt</td>
+                        <td>Thomas</td>
+                        <td>thomas.schmitt@gmail.com</td>
+                    </tr>
+                </table>
+            </section>
             <br>
-            <!-- <thead> -->
-            <tr>
-                <th>Name</th>
-                <th>Vorname</th>
-                <th style="width: 40%">Email</th>
-            </tr>
-            <!-- </thead> -->
-            <tbody>
-                <tr>
-                    <td>Röhrs</td>
-                    <td>Simon</td>
-                    <td>roehrs1@uni-bremen.de</td>
-                </tr>
-                <tr>
-                    <td>Lundt</td>
-                    <td>Jakob</td>
-                    <td>j.lundt@gmail.com</td>
-                </tr>
-                <tr>
-                    <td>Schmitt</td>
-                    <td>Thomas</td>
-                    <td>thomas.schmitt@gmail.com</td>
-                </tr>
-            </tbody>
-        </table>
-    </section>
-    <br>
-    <section>
-        <table>
-            <caption>Tabelle aller Artikel</caption>
+            <!-- TABELLE 2 -->
+            <section>
+                <table>
+                    <caption>Tabelle aller Artikel</caption>
+                    <br>
+                    <tr>
+                        <th>Name</th>
+                        <th>Preis</th>
+                        <th>Menge</th>
+                        <th>Bewertung</th>
+                    </tr>
+                    <tr>
+                        <td>Ganze Bohne <a href="artikel1_info.html">mehr</a></td>
+                        <td>19,99€</td>
+                        <td>250g</td>
+                        <td>5/5</td>
+                    </tr>
+                    <tr>
+                        <td>Espresso Bohne <a href="artikel2_info.html">mehr</a></td>
+                        <td>24,99€</td>
+                        <td>250g</td>
+                        <td>4/5</td>
+                    </tr>
+                    <tr>
+                        <td>Gemahlene Bohne <a href="artikel3_info.html">mehr</a></td>
+                        <td>19,99€</td>
+                        <td>250g</td>
+                        <td>4/5</td>
+                    </tr>
+                </table>
+            </section>
             <br>
-            <tr>
-                <th>Name</th>
-                <th>Preis</th>
-                <th>Menge</th>
-                <th>Bewertung</th>
-            </tr>
-            <tr>
-                <td>Ganze Bohne <a href="artikel1_info.html">mehr</a></td>
-                <td>19,99€</td>
-                <td>250g</td>
-                <td>5/5</td>
-            </tr>
-            <tr>
-                <td>Espresso Bohne <a href="artikel2_info.html">mehr</a></td>
-                <td>24,99€</td>
-                <td>250g</td>
-                <td>4/5</td>
-            </tr>
-            <tr>
-                <td>Gemahlene Bohne <a href="artikel3_info.html">mehr</a></td>
-                <td>19,99€</td>
-                <td>250g</td>
-                <td>4/5</td>
-            </tr>
-        </table>
-    </section>
-    <br>
-    <section>
-        <table>
-            <caption>Tabelle aller Warenkörbe</caption>
-            <br>
-            <tr>
-                <th>Nutzernamen</th>
-                <th>Gesamtanzahl der Artikel</th>
-                <th>Gesamtpreis</th>
-            </tr>
-            <tr>
-                <td>Simon Röhrs <a href="nutzer1_info.html">mehr</a></td>
-                <td>1</td>
-                <td>19,99€</td>
-            </tr>
-            <tr>
-                <td>Jakob Lundt <a href="nutzer2_info.html">mehr</a></td>
-                <td>3</td>
-                <td>69,97€</td>
-            </tr>
-            <tr>
-                <td>Thomas Schmitt <a href="nutzer3_info.html">mehr</a></td>
-                <td>2</td>
-                <td>49,98€</td>
-            </tr>
-        </table>
-    </section>
-
+            <!-- TABELLE 3 -->
+            <section>
+                <table>
+                    <caption>Tabelle aller Warenkörbe</caption>
+                    <br>
+                    <tr>
+                        <th>Nutzernamen</th>
+                        <th>Gesamtanzahl der Artikel</th>
+                        <th>Gesamtpreis</th>
+                    </tr>
+                    <tr>
+                        <td>Klaas Heufer-Umflauf <a href="nutzer1_info.html">mehr</a></td>
+                        <td>1</td>
+                        <td>19,99€</td>
+                    </tr>
+                    <tr>
+                        <td>Jakob Lundt <a href="nutzer2_info.html">mehr</a></td>
+                        <td>3</td>
+                        <td>69,97€</td>
+                    </tr>
+                    <tr>
+                        <td>Thomas Schmitt <a href="nutzer3_info.html">mehr</a></td>
+                        <td>2</td>
+                        <td>49,98€</td>
+                    </tr>
+                </table>
+            </section>
+        </div>
+    </div>
 </body>
-
 
 <script src="sketch.js"></script>
 
