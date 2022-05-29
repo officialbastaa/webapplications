@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Formular</title>
+</head>
+
+<body>
+    <!-- NAV BAR -->
+    <nav>
+        <div>
+            <img src="/Websites/images/menu-2.png" alt="burger menu button" class="navImg">
+            <img src="/Websites/images/einkaufswagen.png" alt="cart" class="navImg" id="cartImg">
+            <img src="/Websites/images/user.png" alt="user" class="navImg" id="userImg">
+            <h1 id="brandLogo">STUDENT COFFEE</h1>
+        </div>
+    </nav>
+    <!-- MAIN CONTENT -->
+    <div id="contentContainer">
+        <div class="insideContainer">
+            <!-- Registrieren -->
+            <section>
+                <form method="get">
+                    <table>
+                        <caption>Als Kunde registrieren</caption>
+                        <tbody>
+                          <tr>
+                              <td><label for="gender">Geschlecht </label></td>
+                              <td>
+                                <input type="radio" name="geschlecht" value="f" id="female"> <label for="female">Frau</label>
+                                <input type="radio" name="geschlecht" value="m" id="male"> <label for="male">Mann</label>
+                              </td>
+                          </tr>
+                            <tr>
+                                <td><label for="vorname">Vorname </label></td>
+                                <td><input type="text" name="vorname" id="vorname"></td>
+                            </tr>
+                            <tr>
+                                <td><label for="nachname">Nachname </label></td>
+                                <td><input type="text" name="nachname" id="nachname"></td>
+                            </tr>
+                            <tr>
+                                <td><label for="email">Email</label></td>
+                                <td><input type="email" name="email" id="email"></td>
+                            </tr>
+                            <tr>
+                                <td><label for="passwort">Passwort</label></td>
+                                <td><input type="password" name="passwort" id="passwort"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </form>
+                <p id="keinvorname" style="color:red;"></p>
+                <br>
+                <button name="register">Registrieren</button>
+                <script>
+                    window.addEventListener("load", setup);
+
+                    function setup() {
+                        document.getElementById("vorname").addEventListener("change", validName);
+                        document.getElementById("nachname").addEventListener("change", validName);
+
+                        document.getElementById("vorname").addEventListener("focus", clearMessage());
+                        document.getElementById("nachname").addEventListener("focus", clearMessage());
+                    }
+
+                    function validName() {
+                        var allowedVocab = /^[A-Z]([a-z]*)$/;
+                        var vorname = document.getElementById("vorname").value;
+                        var nachnahme = document.getElementById("nachname").value;
+                        if (!vorname.match(allowedVocab)) {
+                            document.getElementById("keinvorname").innerHTML = "Ungültiger Vorname"
+                        }
+                        if (!nachname.match(allowedVocab)) {
+                            document.getElementById("keinnachname").innerHTML = "ungültiger Nachnahme"
+                        }
+                    }
+
+                    function clearMessage(i) {
+                        document.getElementById("notname").innerHTML = "";
+                    }
+
+                    }
+                </script>
+            </section>
+        </div>
+    </div>
+</body>
+
+<script src="sketch.js"></script>
+
+</html>
