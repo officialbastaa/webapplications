@@ -59,36 +59,43 @@
                     </table>
                 </form>
                 <p id="keinvorname" style="color:red;"></p>
+                <p id="noLastName" style="color:red;"></p>
                 <br>
                 <button name="register">Registrieren</button>
                 <script>
+
                     window.addEventListener("load", setup);
 
                     function setup() {
                         document.getElementById("vorname").addEventListener("change", validName);
                         document.getElementById("nachname").addEventListener("change", validName);
 
-                        document.getElementById("vorname").addEventListener("focus", clearMessage());
-                        document.getElementById("nachname").addEventListener("focus", clearMessage());
+                        document.getElementById("vorname").addEventListener("focus", clearFirstName);
+                        document.getElementById("nachname").addEventListener("focus", clearLastName);
                     }
 
                     function validName() {
                         var allowedVocab = /^[A-Z]([a-z]*)$/;
+
                         var vorname = document.getElementById("vorname").value;
-                        var nachnahme = document.getElementById("nachname").value;
+                        var nachname = document.getElementById("nachname").value;
                         if (!vorname.match(allowedVocab)) {
-                            document.getElementById("keinvorname").innerHTML = "Ungültiger Vorname"
+                            document.getElementById("keinvorname").innerHTML = "Ungültiger Vorname";
                         }
-                        if (!nachname.match(allowedVocab)) {
-                            document.getElementById("keinnachname").innerHTML = "ungültiger Nachnahme"
+                        else if (!nachname.match(allowedVocab)) {
+                            document.getElementById("noLastName").innerHTML = "Ungültiger Nachname";
                         }
-                    }
 
-                    function clearMessage(i) {
-                        document.getElementById("notname").innerHTML = "";
-                    }
 
                     }
+
+                    function clearFirstName() {
+                        document.getElementById("keinvorname").innerHTML = "";
+                    }
+                    function clearLastName() {
+                        document.getElementById("noLastName").innerHTML = "";
+                    }
+
                 </script>
             </section>
         </div>
