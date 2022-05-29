@@ -29,37 +29,52 @@
             <!-- TABELLE 1 -->
             <section>
                 <h2>Warenkorb von Klaas Heufer-Umflauf</h2>
-                <table>
+                <table id="warenkorb">
                     <tr>
                         <th>Artikel</th>
                         <th>Menge</th>
-                        <th>Preis</th>
-                        <th>Gesamtpreis</th>
+                        <th>Preis in €</th>
+                        <th>Gesamtpreis in €</th>
                     </tr>
                     <tr>
-                        <td>Ganze Bohne</td>
-                        <td>1</td>
-                        <td>19,99€</td>
-                        <td>19,99€</td>
+                        <td>Gemahlene Bohne</td>
+                        <td>2</td>
+                        <td>19.99</td>
+                        <td></td>
                     </tr>
                     <tr>
                         <td>Espresso Bohne</td>
                         <td>2</td>
-                        <td>24,99€</td>
-                        <td>49,98€</td>
+                        <td>24.99</td>
+                        <td></td>
                     </tr>
                     <tr>
                         <td style="font-weight: bold;">Gesamt:</td>
-                        <td style="font-weight: bold;">3</td>
+                        <td style="font-weight: bold;"></td>
                         <td></td>
-                        <td style="font-weight: bold;">69,97€</td>
+                        <td style="font-weight: bold;"></td>
                     </tr>
                 </table>
+                <script>
+
+                var table = document.getElementById("warenkorb");
+                var sum = 0;
+                var amount = 0;
+
+                for(var i = 1; i < 3; i++){
+                  var price = table.rows[i].cells[1].innerHTML * table.rows[i].cells[2].innerHTML;
+                  table.rows[i].cells[3].innerHTML = price;
+                  sum += price;
+                  table.rows[3].cells[3].innerHTML = sum;
+
+                  amount += parseInt(table.rows[i].cells[1].innerHTML);
+                  table.rows[3].cells[1].innerHTML = amount;
+                }
+
+                </script>
             </section>
         </div>
     </div>
 </body>
-
-<script src="sketch.js"></script>
 
 </html>
