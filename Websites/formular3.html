@@ -26,29 +26,38 @@
     <!-- MAIN CONTENT -->
     <div id="contentContainer">
         <div class="insideContainer">
-            <!-- Login -->
+
+            <!-- Artikel Hinzufügen Tabelle -->
             <section>
                 <form method="post">
                     <table>
-                        <caption>Login</caption>
+                        <caption>Artikel hinzufügen</caption>
                         <tbody>
                             <tr>
-                                <td><label for="email">Email</label></td>
-                                <td><input type="email" name="email" id="email"></td>
+                                <td><label for="produktname">Name</label></td>
+                                <td><input type="text" name="produktname" id="produktname"></td>
                             </tr>
                             <tr>
-                                <td><label for="passwort">Passwort</label></td>
-                                <td><input type="password" name="passwort" id="passwort"></td>
+                                <td><label for="preis">Preis</label></td>
+                                <td><input type="text" name="preis" id="preis"></td>
+                            </tr>
+                            <tr>
+                                <td><label for="menge">Menge</label></td>
+                                <td><input type="text" name="menge" id="menge"></td>
+                            </tr>
+                            <tr>
+                                <td><label for="foto">Foto</label></td>
+                                <td><input type="file" name="file" id="file"></td>
+                            </tr>
+                            <tr>
+                                <td><label for="beschreibung">Beschreibung</label></td>
+                                <td><textarea id="beschreibung"></textarea></td>
                             </tr>
                         </tbody>
                     </table>
                 </form>
-                <!-- login Button -->
                 <br>
-                <button>Login</button>
-                <!-- Weiterleitung zum Registrierungsformular -->
-                <br>
-                <p>Noch kein Konto? Jetzt <a href="formular2.html">Konto erstellen. </a></p>
+                <button type="button" name="button">Artikel hinzufügen</button>
             </section>
         </div>
     </div>

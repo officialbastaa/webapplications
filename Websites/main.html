@@ -13,9 +13,13 @@
     <!-- NAV BAR -->
     <nav>
         <div>
-            <img src="/Websites/images/menu-2.png" alt="burger menu button" class="navImg">
-            <img src="/Websites/images/einkaufswagen.png" alt="cart" class="navImg" id="cartImg">
-            <img src="/Websites/images/user.png" alt="user" class="navImg" id="userImg">
+            <a href="main.html" title="Homepage">
+                <img src="images/menu-2.png" alt="burger menu button" class="navImg">
+            </a>
+            <img src="images/einkaufswagen.png" alt="cart" class="navImg" id="cartImg">
+            <a href="formular1.html" title="User Login">
+                <img src="images/user.png" alt="user" class="navImg" id="userImg">
+            </a>
             <h1 id="brandLogo">STUDENT COFFEE</h1>
         </div>
     </nav>
@@ -52,34 +56,36 @@
             <br>
             <!-- TABELLE 2 -->
             <section>
-                <table>
+                <table id="artikel">
                     <caption>Tabelle aller Artikel</caption>
                     <br>
-                    <tr>
+                    <tr class="alle_artikel">
                         <th>Name</th>
                         <th>Preis</th>
                         <th>Menge</th>
                         <th>Bewertung</th>
                     </tr>
-                    <tr>
+                    <tr class="alle_artikel">
                         <td>Ganze Bohne <a href="artikel1_info.html">mehr</a></td>
-                        <td>19,99€</td>
+                        <td>19.99€</td>
                         <td>250g</td>
                         <td>5/5</td>
                     </tr>
-                    <tr>
+                    <tr class="alle_artikel">
                         <td>Espresso Bohne <a href="artikel2_info.html">mehr</a></td>
-                        <td>24,99€</td>
+                        <td>24.99€</td>
                         <td>250g</td>
                         <td>4/5</td>
                     </tr>
-                    <tr>
+                    <tr class="alle_artikel">
                         <td>Gemahlene Bohne <a href="artikel3_info.html">mehr</a></td>
-                        <td>19,99€</td>
+                        <td>19.99€</td>
                         <td>250g</td>
                         <td>4/5</td>
                     </tr>
                 </table>
+                <br>
+                <a href="formular3.html"><button type="button" id="hinzufuegen" name="button">Artikel Hinzufügen</button></a>
             </section>
             <br>
             <!-- TABELLE 3 -->
@@ -94,25 +100,26 @@
                     </tr>
                     <tr>
                         <td>Klaas Heufer-Umflauf <a href="nutzer1_info.html">mehr</a></td>
-                        <td>1</td>
-                        <td>19,99€</td>
+                        <td>4</td>
+                        <td>89.96 €</td>
                     </tr>
                     <tr>
                         <td>Jakob Lundt <a href="nutzer2_info.html">mehr</a></td>
                         <td>3</td>
-                        <td>69,97€</td>
+                        <td>69.97 €</td>
                     </tr>
                     <tr>
                         <td>Thomas Schmitt <a href="nutzer3_info.html">mehr</a></td>
-                        <td>2</td>
-                        <td>49,98€</td>
+                        <td>6</td>
+                        <td>129.94 €</td>
                     </tr>
                 </table>
             </section>
         </div>
     </div>
+    <script>
+        src = "script.js"
+    </script>
 </body>
-
-<script src="sketch.js"></script>
 
 </html>
