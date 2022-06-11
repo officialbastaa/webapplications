@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Webshop - Nutzer Info</title>
+</head>
+
+<body>
+    <!-- Navbar Section -->
+    <nav>
+        <div>
+            <a href="main.html" title="Homepage">
+                <img src="images/menu-2.png" alt="burger menu button" class="navImg">
+            </a>
+            <img src="images/einkaufswagen.png" alt="cart" class="navImg" id="cartImg">
+            <a href="formular1.html" title="User Login">
+                <img src="images/user.png" alt="user" class="navImg" id="userImg">
+            </a>
+            <h1 id="brandLogo">STUDENT COFFEE</h1>
+        </div>
+    </nav>
+    <!-- MAIN CONTENT -->
+    <div id="contentContainer">
+        <div class="insideContainer">
+            <!-- TABELLE 1 -->
+            <section>
+                <h2>Warenkorb von <span id="userName"></span></h2>
+                <table id="warenkorb">
+                    <tr>
+                        <th>Artikel</th>
+                        <th>Menge</th>
+                        <th>Preis in €</th>
+                        <th>Gesamtpreis in €</th>
+                    </tr>
+                    <tr>
+                        <td><a href="artikel3_info.html">Gemahlene Bohne</a></td>
+                        <td>4</td>
+                        <td>19.99</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><a href="artikel2_info.html">Espresso Bohne</a></td>
+                        <td>2</td>
+                        <td>24.99</td>
+                        <td></td>
+                    </tr>
+                    <br>
+                    <tr>
+                        <td style="font-weight: bold;">Gesamt:</td>
+                        <td style="font-weight: bold;"></td>
+                        <td></td>
+                        <td style="font-weight: bold;"></td>
+                    </tr>
+                </table>
+                <!-- <script>
+                    var table = document.getElementById("warenkorb");
+                    var sum = 0;
+                    var amount = 0;
+
+                    for (var i = 1; i < 3; i++) {
+                        var price = table.rows[i].cells[1].innerHTML * table.rows[i].cells[2].innerHTML;
+                        table.rows[i].cells[3].innerHTML = price;
+                        sum += price;
+                        table.rows[3].cells[3].innerHTML = sum;
+
+                        amount += parseInt(table.rows[i].cells[1].innerHTML);
+                        table.rows[3].cells[1].innerHTML = amount;
+                    }
+                </script> -->
+            </section>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

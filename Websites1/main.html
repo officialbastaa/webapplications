@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Student Coffee</title>
+</head>
+
+<body>
+    <!-- Navbar Section -->
+    <nav class="navbar">
+        <div class="navbar__container">
+            <!-- <div>
+                <a href="main.html" title="Homepage">
+                    <img src="images/menu-2.png" alt="burger menu button" class="navImg">
+                </a>
+                <img src="images/einkaufswagen.png" alt="cart" class="navImg" id="cartImg">
+                <a href="formular1.html" title="User Login">
+                    <img src="images/user.png" alt="user" class="navImg" id="userImg">
+                </a>
+            </div> -->
+            <a href="#home" id="navbar__logo">Student Coffee</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="hero__container">
+        <div class="hero__container-content">
+            <!-- TABELLE 1 -->
+            <section>
+                <table>
+                    <caption>Tabelle aller registrierten Nutzer</caption>
+                    <br>
+                    <tr>
+                        <th>Name</th>
+                        <th>Vorname</th>
+                        <th style="width: 40%">Email</th>
+                    </tr>
+                    <tr>
+                        <td>Heufer-Umflauf</td>
+                        <td>Klaas</td>
+                        <td>klaas.hu@gmail.com</td>
+                    </tr>
+                    <tr>
+                        <td>Lundt</td>
+                        <td>Jakob</td>
+                        <td>j.lundt@gmail.com</td>
+                    </tr>
+                    <tr>
+                        <td>Schmitt</td>
+                        <td>Thomas</td>
+                        <td>thomas.schmitt@gmail.com</td>
+                    </tr>
+                </table>
+            </section>
+            <br>
+            <!-- TABELLE 2 -->
+            <section>
+                <table id="artikel">
+                    <caption>Tabelle aller Artikel</caption>
+                    <br>
+                    <tr class="alle_artikel">
+                        <th>Name</th>
+                        <th>Preis</th>
+                        <th>Menge</th>
+                        <th>Bewertung</th>
+                        <th></th>
+                    </tr>
+                    <tr class="alle_artikel">
+                        <td>Ganze Bohne <a href="artikel1_info.html">mehr</a></td>
+                        <td>19.99€</td>
+                        <td>250g</td>
+                        <td>5/5</td>
+                        <td><button type="button">zum Warekorb hinzufügen</button></td>
+                    </tr>
+                    <tr class="alle_artikel">
+                        <td>Espresso Bohne <a href="artikel2_info.html">mehr</a></td>
+                        <td>24.99€</td>
+                        <td>250g</td>
+                        <td>4/5</td>
+                        <td><button type="button">zum Warekorb hinzufügen</button></td>
+                    </tr>
+                    <tr class="alle_artikel">
+                        <td>Gemahlene Bohne <a href="artikel3_info.html">mehr</a></td>
+                        <td>19.99€</td>
+                        <td>250g</td>
+                        <td>4/5</td>
+                        <td><button type="button">zum Warekorb hinzufügen</button></td>
+                    </tr>
+                </table>
+                <br>
+                <a href="formular3.html"><button type="button" id="hinzufuegen" name="button">Artikel Hinzufügen</button></a>
+            </section>
+            <br>
+            <!-- TABELLE 3 -->
+            <section>
+                <table>
+                    <caption>Tabelle aller Warenkörbe</caption>
+                    <br>
+                    <tr>
+                        <th>Nutzernamen</th>
+                        <th>Gesamtanzahl der Artikel</th>
+                        <th>Gesamtpreis</th>
+                        <th>Details</th>
+                    </tr>
+                    <tr>
+                        <td><span id="userName">Klaas Heufer-Umflauf</span></td>
+                        <td>4</td>
+                        <td>89.96 €</td>
+                        <td>
+                            <form method="GET" action="nutzer1_info.html">
+                                <input type="hidden" name="userName" value="Klaas-Heufer-Umlauf">
+                                <p class="info"><input type="submit" value="mehr"></p>
+                            </form>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><span id="userName">Jakob Lundt</span></td>
+                        <td>3</td>
+                        <td>69.97 €</td>
+                        <td>
+                            <form method="GET" action="nutzer1_info.html">
+                                <input type="hidden" name="userName" value="Jakob-Lundt">
+                                <p class="info"><input type="submit" value="mehr"></p>
+                            </form>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><span id="userName">Thomas Schmitt</span></td>
+                        <td>6</td>
+                        <td>129.94 €</td>
+                        <td>
+                            <form method="GET" action="nutzer1_info.html">
+                                <input type="hidden" name="userName" value="Thomas-Schmitt">
+                                <p class="info"><input type="submit" value="mehr"></p>
+                            </form>
+                        </td>
+                    </tr>
+                </table>
+            </section>
+        </div>
+    </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

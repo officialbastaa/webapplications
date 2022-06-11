@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Formular</title>
+</head>
+
+<body>
+    <!-- Navbar Section -->
+    <nav>
+        <div>
+            <a href="main.html" title="Homepage">
+                <img src="images/menu-2.png" alt="burger menu button" class="navImg">
+            </a>
+            <img src="images/einkaufswagen.png" alt="cart" class="navImg" id="cartImg">
+            <a href="formular1.html" title="User Login">
+                <img src="images/user.png" alt="user" class="navImg" id="userImg">
+            </a>
+            <h1 id="brandLogo">STUDENT COFFEE</h1>
+        </div>
+    </nav>
+    <!-- MAIN CONTENT -->
+    <div id="contentContainer">
+        <div class="insideContainer">
+            <!-- Login -->
+            <section>
+                <form method="post">
+                    <table>
+                        <caption>Login</caption>
+                        <tbody>
+                            <tr>
+                                <td><label for="email">Email</label></td>
+                                <td><input type="email" name="email" id="email" placeholder="m.mustermann@gmail.com"></td>
+                            </tr>
+                            <tr>
+                                <td><label for="passwort">Passwort</label></td>
+                                <td><input type="password" name="passwort" id="passwort" placeholder="*****"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </form>
+                <!-- login Button -->
+                <br>
+                <button>Login</button>
+                <!-- Weiterleitung zum Registrierungsformular -->
+                <br>
+                <p>Noch kein Konto? Jetzt <a href="formular2.html">Konto erstellen. </a></p>
+            </section>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

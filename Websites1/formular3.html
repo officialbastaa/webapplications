@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Formular</title>
+</head>
+
+<body>
+    <!-- Navbar Section -->
+    <nav>
+        <div>
+            <a href="main.html" title="Homepage">
+                <img src="images/menu-2.png" alt="burger menu button" class="navImg">
+            </a>
+            <img src="images/einkaufswagen.png" alt="cart" class="navImg" id="cartImg">
+            <a href="formular1.html" title="User Login">
+                <img src="images/user.png" alt="user" class="navImg" id="userImg">
+            </a>
+            <h1 id="brandLogo">STUDENT COFFEE</h1>
+        </div>
+    </nav>
+    <!-- MAIN CONTENT -->
+    <div id="contentContainer">
+        <div class="insideContainer">
+
+            <!-- Artikel Hinzufügen Tabelle -->
+            <section>
+                <form method="post">
+                    <table>
+                        <caption>Artikel hinzufügen</caption>
+                        <tbody>
+                            <tr>
+                                <td><label for="produktname">Name</label></td>
+                                <td><input type="text" name="produktname" id="produktname"></td>
+                            </tr>
+                            <tr>
+                                <td><label for="preis">Preis</label></td>
+                                <td><input type="text" name="preis" id="preis"></td>
+                            </tr>
+                            <tr>
+                                <td><label for="menge">Menge</label></td>
+                                <td><input type="text" name="menge" id="menge"></td>
+                            </tr>
+                            <tr>
+                                <td><label for="foto">Foto</label></td>
+                                <td><input type="file" name="file" id="file"></td>
+                            </tr>
+                            <tr>
+                                <td><label for="beschreibung">Beschreibung</label></td>
+                                <td><textarea id="beschreibung"></textarea></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </form>
+                <br>
+                <button type="button" name="button">Artikel hinzufügen</button>
+            </section>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

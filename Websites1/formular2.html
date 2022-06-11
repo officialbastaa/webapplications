@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Formular</title>
+</head>
+
+<body>
+    <!-- Navbar Section -->
+    <nav>
+        <div>
+            <a href="main.html" title="Homepage">
+                <img src="images/menu-2.png" alt="burger menu button" class="navImg">
+            </a>
+            <img src="images/einkaufswagen.png" alt="cart" class="navImg" id="cartImg">
+            <a href="formular1.html" title="User Login">
+                <img src="images/user.png" alt="user" class="navImg" id="userImg">
+            </a>
+            <h1 id="brandLogo">STUDENT COFFEE</h1>
+        </div>
+    </nav>
+    <!-- MAIN CONTENT -->
+    <div id="contentContainer">
+        <div class="insideContainer">
+            <!-- Registrieren -->
+            <section>
+                <form method="get">
+                    <table>
+                        <caption>Als Kunde registrieren</caption>
+                        <tbody>
+                            <tr>
+                                <td><label for="gender">Geschlecht</label></td>
+                                <td>
+                                    <input type="radio" name="geschlecht" value="f" id="female"> <label for="female">Frau</label>
+                                    <input type="radio" name="geschlecht" value="m" id="male"> <label for="male">Mann</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><label for="vorname">Vorname </label></td>
+                                <td><input type="text" name="vorname" id="vorname" placeholder="Max"></td>
+                            </tr>
+                            <tr>
+                                <td><label for="nachname">Nachname </label></td>
+                                <td><input type="text" name="nachname" id="nachname" placeholder="Mustermann"></td>
+                            </tr>
+                            <tr>
+                                <td><label for="email">Email</label></td>
+                                <td><input type="email" name="email" id="email" placeholder="m.mustermann@gmail.com"></td>
+                            </tr>
+                            <tr>
+                                <td><label for="passwort">Passwort</label></td>
+                                <td><input type="password" name="passwort" id="passwort" placeholder="*****"></td>
+                            </tr>
+                            <tr>
+                                <td><label for="passwort">Passwort bestätigen</label></td>
+                                <td><input type="password" name="confirmPasswort" id="confirmPasswort" placeholder="*****"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </form>
+                <p id="keinvorname" style="color:red;"></p>
+                <p id="noLastName" style="color:red;"></p>
+                <p id="noPassword" style="color:red;"></p>
+                <p id="notSamePassword" style="color:red;"></p>
+
+                <br>
+                <button type="button" href="#" value="Registrieren"></button>
+            </section>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
