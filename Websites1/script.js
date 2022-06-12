@@ -13,12 +13,14 @@ function setup() {
     document.getElementById("passwort").addEventListener("focus",clearGoodPassword);
     document.getElementById("confirmPasswort").addEventListener("focus",clearSamePassword);
 
-    /* Die Übertragung des Nutezrnamens per url */
-    if (window.location.search != '') {
-        var url = window.location.search;
-        var user_Name = url.replace('?userName=', ''); //theTitle
-        document.getElementById("userName").innerHTML = (user_Name.replaceAll("-", " ")).replaceAll("_", "'");
-    }
+    
+}
+
+/* Die Übertragung des Nutezrnamens per url */
+if (window.location.search != '') {
+    var url = window.location.search;
+    var user_Name = url.replace('?userName=', ''); //theTitle
+    document.getElementById("userName").innerHTML = (user_Name.replaceAll("-", " ")).replaceAll("_", "'");
 }
 
 /* Name Control */
