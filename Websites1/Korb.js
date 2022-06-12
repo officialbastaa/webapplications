@@ -1,19 +1,25 @@
+window.addEventListener("load", setup)
 
-var removeButtons = document.getElementsByClassName("remove-button")
-for (var i=0; i < removeButtons.length; i++){
-  var currentButton = removeButtons[i]
-  currentButton.addEventListener("click", removeItem)
+function setup() {
+  var removeButtons = document.getElementsByClassName("remove-button")
+  for (var i=0; i < removeButtons.length; i++){
+    var currentButton = removeButtons[i]
+    currentButton.addEventListener("click", removeItem)
+  }
+  
+  var amountInputs = document.getElementsByClassName("itemAmount")
+  for (var i=0; i < amountInputs.length; i++){
+    var currentInput = amountInputs[i]
+    currentInput.addEventListener("change", changedAmount)
+  }
+  
+  document.getElementById("addGanzeBohne").addEventListener("click", addGanze)
+  document.getElementById("addExpressoBohne").addEventListener("click", addExpresso)
+  document.getElementById("addGemahleneBohne").addEventListener("click", addGemahlene)
 }
 
-var amountInputs = document.getElementsByClassName("itemAmount")
-for (var i=0; i < amountInputs.length; i++){
-  var currentInput = amountInputs[i]
-  currentInput.addEventListener("change", changedAmount)
-}
 
-document.getElementById("addGanzeBohne").addEventListener("click", addGanze)
-document.getElementById("addExpressoBohne").addEventListener("click", addExpresso)
-document.getElementById("addGemahleneBohne").addEventListener("click", addGemahlene)
+
 
 function addGanze(){
   addNewItem ("<a href='artikel1_info.html'>Ganze Bohne</a>", 19.99)
