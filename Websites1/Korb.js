@@ -20,12 +20,12 @@ function addGanze(){
   updatePrice()
 }
 
-function addExpresso(event){
+function addExpresso(){
   addNewItem("<a href='artikel2_info.html'>Expresso Bohne</a>", 24.99) 
   updatePrice()
 }
 
-function addGemahlene(event){
+function addGemahlene(){
   addNewItem("<a href='artikel3_info.html'>Gemahlene Bohne</a>", 19.99)
   updatePrice()
 }
@@ -33,7 +33,7 @@ function addGemahlene(event){
 function addNewItem (name, price){
   var newRow = document.createElement("tr")
   var contents = `
-  <td>${name}</td>
+  <td><span class='itemName'>${name}</span></td>
   <td><input type="number" class="itemAmount" value="1"></td>
   <td>${price}</td>
   <td></td>
@@ -44,7 +44,6 @@ function addNewItem (name, price){
   newRow.getElementsByClassName("remove-button")[0].addEventListener("click", removeItem)
   newRow.getElementsByClassName("itemAmount")[0].addEventListener("change", changedAmount)
 }
-
 
 function removeItem(event){
   var clicked_button = event.target
