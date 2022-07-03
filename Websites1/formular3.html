@@ -16,7 +16,7 @@
             <a href="main.html" title="Homepage">
                 <img src="images/menu-2.png" alt="burger menu button" class="navImg">
             </a>
-            
+
             <a href="Warenkorb.html">
                 <img src="images/einkaufswagen.png" alt="cart" class="navImg" id="cartImg">
             </a>
@@ -27,14 +27,14 @@
             <h1 id="brandLogo">STUDENT COFFEE</h1>
         </div>
     </nav>
-    
+
     <!-- MAIN CONTENT -->
     <div id="contentContainer">
         <div class="insideContainer">
 
             <!-- Artikel Hinzufügen Tabelle -->
             <section>
-                <form method="post">
+                <form action="article.php" method="post">
                     <table>
                         <caption>Artikel hinzufügen</caption>
                         <tbody>
@@ -56,7 +56,7 @@
                             </tr>
                             <tr>
                                 <td><label for="beschreibung">Beschreibung</label></td>
-                                <td><textarea id="beschreibung"></textarea></td>
+                                <td><textarea name="beschreibung" id="beschreibung"></textarea></td>
                             </tr>
                         </tbody>
                     </table>
