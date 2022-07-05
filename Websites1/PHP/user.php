@@ -1,8 +1,7 @@
 <?php
 include('setupDB.php');
 
-$gender = $_POST['geschlecht'];     // [...] müsste aus formular2.html Inhalt nehmen
-$name = $_POST['name'];         
+$name = $_POST['name'];         // [...] müsste aus formular2.html Inhalt nehmen
 $vorname = $_POST['vorname'];
 $email = $_POST['email'];
 $password = $_POST['passwort'];
