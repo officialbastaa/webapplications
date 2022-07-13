@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Student Coffee</title>
+
+</head>
+
+<body>
+
+  <!-- Navbar Section -->
+  <nav>
+    <div>
+        <a href="main.html" title="Homepage">
+            <img src="images/menu-2.png" alt="burger menu button" class="navImg">
+        </a>
+        
+        <a href="Warenkorb.html">
+            <img src="images/einkaufswagen.png" alt="cart" class="navImg" id="cartImg">
+        </a>
+
+        <a href="formular1.html" title="User Login">
+            <img src="images/user.png" alt="user" class="navImg" id="userImg">
+        </a>
+        <h1 id="brandLogo">STUDENT COFFEE</h1>
+    </div>
+</nav>
+
+
+  <!-- TABELLE 1 -->
+  <section>
+      <h2>Warenkorb</h2>
+      <table id="warenkorb">
+          <tr>
+              <th>Artikel</th>
+              <th>Menge</th>
+              <th>Einzelpreis in €</th>
+              <th>Gesamtpreis in €</th>
+              <th>Artikel Entfernen</th>
+          </tr>
+          
+        </table>
+        <table>
+          <tr>
+              <td style="font-weight: bold;">Gesamt:</td>
+              <td style="font-weight: bold;"><span id="totalPrice"></span></td>
+          </tr>
+      </table>
+  </section>
+  <br>
+  <br>
+
+  <!-- Alle Artikel -->
+  <section>
+      <table id="artikel">
+          <caption>Tabelle aller Artikel</caption>
+          <br>
+          <tr>
+              <th>Name</th>
+              <th>Preis in €</th>
+              <th>Menge</th>
+              <th>Bewertung</th>
+              <th></th>
+          </tr>
+          <tr class="alle_artikel">
+              <td>Ganze Bohne <a href="artikel1_info.html">mehr</a></td>
+              <td>19.99</td>
+              <td>250g</td>
+              <td>5/5</td>
+              <td><button type="button" id="addGanzeBohne">zum Warekorb hinzufügen</button></td>
+          </tr>
+          <tr class="alle_artikel">
+              <td>Espresso Bohne <a href="artikel2_info.html">mehr</a></td>
+              <td>24.99</td>
+              <td>250g</td>
+              <td>4/5</td>
+              <td><button type="button" id="addExpressoBohne">zum Warekorb hinzufügen</button></td>
+          </tr>
+          <tr class="alle_artikel">
+              <td>Gemahlene Bohne <a href="artikel3_info.html">mehr</a></td>
+              <td>19.99</td>
+              <td>250g</td>
+              <td>4/5</td>
+              <td><button type="button" id="addGemahleneBohne">zum Warekorb hinzufügen</button></td>
+          </tr>
+      </table>
+      <script src="Korb.js"></script>
+</body>
+</html>
