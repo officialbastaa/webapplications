@@ -6,7 +6,7 @@ $name = $_POST['name'];     // [...] müsste aus formular3.html Inhalt nehmen
 $preis = $_POST['preis'];
 $amount = $_POST['anzahl'];
 $description = $_POST['beschreibung'];
-$image = $_FILES['bild'];    // der Pfad der Datei, die hochgeladen wird
+$bildPath = $_FILES['bild'];    // der Pfad der Datei, die hochgeladen wird
 
 //preparation of insert statement
 $tname = 'artikel';
@@ -15,14 +15,14 @@ $name2 = 'preis';
 $name3 = 'anzahl';
 $name4 = 'beschreibung';
 $name5 = 'bild';
-$ins = "INSERT INTO $tname($name1, $name2, $name3, $name4, $name5) VALUES (?, ?, ?, ?, ?)";
+$ins = "INSERT INTO $tname($name1, $name2, $name3, $name4, $name5) VALUES (?, ?, ?, ?, 0x".bin2hex($blob).")";
 $ps = $conn -> prepare($ins);
 
 //function to insert a new user
-function insertArticle($p, $n1, $n2, $n3, $n4, $n5) {
-    $blob = file_get_contents($n5); // der Inhalt des Bildes mit dem Path $n5
-    $sql = "INSERT INTO artikel(name, preis, anzahl, beschreibung, bild) VALUES('$n1', '$n2', '$n3', '$n4', 0x".bin2hex($blob).")";
-    $p -> bind_param('sdisb', $n1, $n2, $n3, $n4, $n5);
+function insertArticle($p, $n1, $n2, $n3, $n4, $b) {
+    $blob = file_get_contents($b); // der Inhalt des Bildes mit dem Path $b
+    // $sql = "INSERT INTO artikel(name, preis, anzahl, beschreibung, bild) VALUES('$n1', '$n2', '$n3', '$n4', 0x".bin2hex($blob).")";
+    $p -> bind_param('sdisb', $n1, $n2, $n3, $n4, $b);
     if (!$p -> execute()) {
         die("Hinzufügen fehlgeschlagen: " . $conn -> error);
     }
@@ -66,7 +66,7 @@ $f1 = $name;
 $f2 = $preis;
 $f3 = $amount;
 $f4 = $description;
-$f5 = $image;
+$f5 = $bildPath;
 
 //execution of the insertion function
 insertArticle($ps, $f1, $f2, $f3, $f4, $f5);
