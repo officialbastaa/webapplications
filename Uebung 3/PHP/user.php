@@ -27,6 +27,30 @@ function insertUser($p, $n1, $n2, $n3, $n4) {
     echo ($n1 . " " . $n2 .  " wurde erfolgreich hinzugefügt! <br>");
 }
 
+
+//Füllen der Database mit 2 Nutzern, falls sie leer ist
+if ($result = $conn->query("SELECT * FROM $tname LIMIT 1")){
+
+    if (!$obj = $result->fetch_object())
+    {
+      echo "Da die Tabelle Leer ist, werden noch 2 zusätzliche Nutzer hinzugefügt <br>";
+      $f1 = 'Heufer-Umlauf';
+      $f2 = 'Klaas';
+      $f3 = 'klaas.hu@gmail.com';
+      $f4 = '132456';
+
+      $g1 = 'Schmitt';
+      $g2 = 'Thomas';
+      $g3 = 'thomas.schmitt@gmail.com';
+      $g4 = 'Passwort123';
+
+      insertUser($ps, $f1, $f2, $f3, $f4);
+      insertUser($ps, $g1, $g2, $g3, $g4);
+      echo "<br>";
+    }
+    $result->close();
+}
+
 $f1 = $name;
 $f2 = $vorname;
 $f3 = $email;
