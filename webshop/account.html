@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+        <title>All Products - Student Coffee</title>
+    </head>
+    <body>
+        <!-- Nav Section -->
+        <div class="navbar">
+            <div class="logo">
+                <a href="index.html"><img src="images/logo_sw.png" alt="Logo" width="100px"></a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">Produkte</a></li>
+                    <li><a href="account.html">Konto</a></li>
+                    <li><a href="account.html"><img src="images/account.png" alt="Konto" width="20px" height="20px"></a></li>
+                    <li><a href="cart.html"><img src="images/cart.png" alt="Warenkorb" width="20px" height="20px"></a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <!-- Account Page -->
+
+        <div class="account-page">
+            <div class="container">
+                <div class="row">
+                    <div class="col-2">
+                        <img src="images/hero_2.png" alt="hero_2" width="100%">
+                    </div>
+                    <div class="col-2">
+                        <div class="form-container">
+                            <div class="form-btn">
+                                <span onclick="login()">Login</span>
+                                <span onclick="register()">Register</span>
+                                <hr id="indicator">
+                            </div>
+                            <form id="loginForm">
+                                <input type="text" placeholder="Username">
+                                <input type="password" placeholder="Password">
+                                <button type="submit" class="btn">Login</button>
+                                <a href="#">Forgot password?</a>
+                            </form>
+                            <form action="http://localhost/EWAPP/PHP/user.php" method="post" id="regForm">
+                                <table>
+                                    <tr>
+                                        <td><label for="vorname">Vorname </label></td>
+                                        <td><input type="text" name="vorname" id="vorname" placeholder="Max"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><label for="nachname">Nachname </label></td>
+                                        <td><input type="text" name="name" id="nachname" placeholder="Mustermann"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><label for="email">Email</label></td>
+                                        <td><input type="email" name="email" id="email" placeholder="m.mustermann@gmail.com"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><label for="passwort">Passwort</label></td>
+                                        <td><input type="password" name="passwort" id="passwort" placeholder="*****"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><label for="passwort">Passwort bestätigen</label></td>
+                                        <td><input type="password" name="confirmPasswort" id="confirmPasswort" placeholder="*****"></td>
+                                    </tr>
+                                </table>
+                                <br>
+                                <input type="submit" value="Registrieren">
+                                <p id="keinvorname" style="color:red;"></p>
+                                <p id="noLastName" style="color:red;"></p>
+                                <p id="noPassword" style="color:red;"></p>
+                                <p id="goodPassword" style="color:green;"></p>
+                                <p id="notSamePassword" style="color:red;"></p>
+                                <p id="samePassword" style="color:green;"></p>
+                                <br>                
+                                <!-- <input type="text" placeholder="Username">
+                                <input type="email" placeholder="Email">
+                                <input type="password" placeholder="Password">
+                                <button type="submit" class="btn">Register</button> -->
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="footer-col-1">
+                        <h3>Download Our App</h3>
+                        <p>Download App for Android and iOS mobile phones.</p>
+                        <div class="app-logo">
+                            <img src="images/play-store.png" alt="paly-store">
+                            <img src="images/app-store.png" alt="app-store">
+                        </div>
+                    </div>
+                    <div class="footer-col-2">
+                        <img src="images/logo-white.png">
+                        <p>Our Purpose Is To Sustainably Make The Pleasure and Benefits of Sports Accessible to the Many.</p>
+                    </div>
+                    <div class="footer-col-3">
+                        <h3>Useful Links</h3>
+                        <ul>
+                            <li>Coupons</li>
+                            <li>Blog Post</li>
+                            <li>Return Policy</li>
+                            <li>Join Affiliate</li>
+                        </ul>
+                    </div>
+                    <div class="footer-col-4">
+                        <h3>Follow Us</h3>
+                        <ul>
+                            <li>Facebook</li>
+                            <li>Twitter</li>
+                            <li>Instagram</li>
+                            <li>YouTube</li>
+                        </ul>
+                    </div>
+                </div>
+                <hr>
+                <p class="copyright">Copyright 2022 - Student Coffee</p>
+            </div>
+        </div>
+
+        <!-- JS -->
+        <script src="script.js"></script>
+        <script src="account.js"></script>
+    </body>
+</html>

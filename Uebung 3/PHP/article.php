@@ -15,14 +15,14 @@ $name2 = 'preis';
 $name3 = 'anzahl';
 $name4 = 'beschreibung';
 $name5 = 'bild';
-$ins = "INSERT INTO $tname($name1, $name2, $name3, $name4, $name5) VALUES (?, ?, ?, ?, 0x".bin2hex($blob).")";
-$ps = $conn -> prepare($ins);
+// $ins = "INSERT INTO $tname($name1, $name2, $name3, $name4, $name5) VALUES (?, ?, ?, ?, 0x".bin2hex($blob).")";
+// $ps = $conn -> prepare($ins);
 
 //function to insert a new user
 function insertArticle($p, $n1, $n2, $n3, $n4, $b) {
     $blob = file_get_contents($b); // der Inhalt des Bildes mit dem Path $b
-    // $sql = "INSERT INTO artikel(name, preis, anzahl, beschreibung, bild) VALUES('$n1', '$n2', '$n3', '$n4', 0x".bin2hex($blob).")";
-    $p -> bind_param('sdisb', $n1, $n2, $n3, $n4, $b);
+    $sql = "INSERT INTO artikel(name, preis, anzahl, beschreibung, bild) VALUES('$n1', '$n2', '$n3', '$n4', 0x".bin2hex($blob).")";
+    // $p -> bind_param('sdisb', $n1, $n2, $n3, $n4, $b);
     if (!$p -> execute()) {
         die("Hinzufügen fehlgeschlagen: " . $conn -> error);
     }
