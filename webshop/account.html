@@ -7,7 +7,7 @@
         <link rel="stylesheet" href="style.css">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
-        <title>All Products - Student Coffee</title>
+        <title>Konto - Student Coffee</title>
     </head>
     <body>
         <!-- Nav Section -->
@@ -37,24 +37,34 @@
                     <div class="col-2">
                         <div class="form-container">
                             <div class="form-btn">
-                                <span onclick="login()">Login</span>
+                                <a onclick="login()"><span>Login</span></a>
                                 <span onclick="register()">Register</span>
-                                <hr id="indicator">
+                                <hr id="Indicator">
                             </div>
-                            <form id="loginForm">
-                                <input type="text" placeholder="Username">
-                                <input type="password" placeholder="Password">
-                                <button type="submit" class="btn">Login</button>
-                                <a href="#">Forgot password?</a>
-                            </form>
-                            <form action="http://localhost/EWAPP/PHP/user.php" method="post" id="regForm">
+                            <form id="LoginForm">
                                 <table>
                                     <tr>
-                                        <td><label for="vorname">Vorname </label></td>
+                                        <td><label for="email">Email</label></td>
+                                        <td><input type="email" name="email" id="email" placeholder="m.mustermann@gmail.com"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><label for="passwort">Passwort</label></td>
+                                        <td><input type="password" name="passwort" id="passwort" placeholder="*****"></td>        
+                                    </tr>
+                                </table>
+                                <br>
+                                <button type="submit">Login</button>
+                                <br>
+                                <a href="#"><p style="margin-top: 25px;">Forgot password?</p></a>
+                            </form>
+                            <form action="http://localhost/EWAPP/PHP/user.php" method="post" id="RegForm">
+                                <table>
+                                    <tr>
+                                        <td><label for="vorname">Vorname</label></td>
                                         <td><input type="text" name="vorname" id="vorname" placeholder="Max"></td>
                                     </tr>
                                     <tr>
-                                        <td><label for="nachname">Nachname </label></td>
+                                        <td><label for="nachname">Nachname</label></td>
                                         <td><input type="text" name="name" id="nachname" placeholder="Mustermann"></td>
                                     </tr>
                                     <tr>
@@ -71,18 +81,16 @@
                                     </tr>
                                 </table>
                                 <br>
-                                <input type="submit" value="Registrieren">
+                                <button type="submit" value="Registrieren">Registrieren</button>
                                 <p id="keinvorname" style="color:red;"></p>
                                 <p id="noLastName" style="color:red;"></p>
                                 <p id="noPassword" style="color:red;"></p>
                                 <p id="goodPassword" style="color:green;"></p>
                                 <p id="notSamePassword" style="color:red;"></p>
                                 <p id="samePassword" style="color:green;"></p>
-                                <br>                
-                                <!-- <input type="text" placeholder="Username">
-                                <input type="email" placeholder="Email">
-                                <input type="password" placeholder="Password">
-                                <button type="submit" class="btn">Register</button> -->
+                                <br>      
+                                <br>    
+                                <small>Das Passwort muss mindestens 5 Zeichen lang sein, mindest eine Ziffer, einen Groß- sowie einen Kleinbuchstaben enthalten.</small>      
                             </form>
                         </div>
                     </div>
@@ -91,22 +99,22 @@
         </div>
 
         <!-- Footer -->
-        <div class="footer">
+        <div class="footer" id="footer-account">
             <div class="container">
                 <div class="row">
-                    <div class="footer-col-1">
+                    <!-- <div class="footer-col-1">
                         <h3>Download Our App</h3>
                         <p>Download App for Android and iOS mobile phones.</p>
                         <div class="app-logo">
                             <img src="images/play-store.png" alt="paly-store">
                             <img src="images/app-store.png" alt="app-store">
                         </div>
-                    </div>
+                    </div> -->
                     <div class="footer-col-2">
-                        <img src="images/logo-white.png">
-                        <p>Our Purpose Is To Sustainably Make The Pleasure and Benefits of Sports Accessible to the Many.</p>
+                        <img src="images/logo_small_w.png">
+                        <p>Unsere Leidenschaft besteht darin, geschmackvollen Kaffee in jeden Hörsaal zu bringen. Mit Student Coffee unterstützen wir Studierende zu jeder Tageszeit.</p>
                     </div>
-                    <div class="footer-col-3">
+                    <!-- <div class="footer-col-3">
                         <h3>Useful Links</h3>
                         <ul>
                             <li>Coupons</li>
@@ -123,14 +131,32 @@
                             <li>Instagram</li>
                             <li>YouTube</li>
                         </ul>
-                    </div>
+                    </div> -->
                 </div>
                 <hr>
                 <p class="copyright">Copyright 2022 - Student Coffee</p>
             </div>
         </div>
 
-        <!-- JS -->
+        <!-- JS -->        
+        <script>
+            // JS for toggle form
+            var lForm = document.getElementById("LoginForm");
+            var rForm = document.getElementById("RegForm");
+            var indi = document.getElementById("Indicator");
+
+                function register() {
+                    rForm.style.transform = translateX("0px");
+                    lForm.style.transform = translateX("0px");
+                    indi.style.transform = translateX("100px");
+                }
+
+                function login() {
+                    rForm.style.transform = translateX("300px");
+                    lForm.style.transform = translateX("300px");
+                    indi.style.transform = translateX("0px");
+                }
+        </script>
         <script src="script.js"></script>
         <script src="account.js"></script>
     </body>

@@ -10,6 +10,23 @@ function menutoggle() {
     }
 }
 
+// JS for toggle form
+    var lForm = document.getElementById("LoginForm");
+    var rForm = document.getElementById("RegForm");
+    var indi = document.getElementById("Indicator");
+
+        function register() {
+            rForm.style.transform = translateX("0px");
+            lForm.style.transform = translateX("0px");
+            indi.style.transform = translateX("100px");
+        }
+
+        function login() {
+            rForm.style.transform = translateX("300px");
+            lForm.style.transform = translateX("300px");
+            indi.style.transform = translateX("0px");
+        }
+
 
 // JS for product gallery
     var productImg = document.getElementById("productImg");

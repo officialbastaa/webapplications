@@ -12,7 +12,7 @@ body {
 }
 
 .content-container {
-    padding-top: 30px;
+    padding-top: 10px;
     background-color: #f6f6f6;
 }
 
@@ -24,6 +24,10 @@ li, a {
     color: black;
     text-decoration: none;
 } 
+
+br {
+    background-color: #484d6d;
+}
 
 button {
     font-family: source-serif-4,serif;
@@ -94,23 +98,6 @@ a {
     color: black;
 }
 
-/* .nav__links {
-    list-style: none;
-}
-
-.nav__links li {
-    display: inline-block;
-    padding: 0px 20px;
-}
-
-.nav__links li a {
-    transition: all 0.3s ease 0s;
-}
-
-.nav__links li a:hover {
-    color: #0088a9;
-} */
-
 button {
     /* margin: 10px 0 10px 0; */
     padding: 9px 25px;
@@ -176,7 +163,7 @@ button:active {
 }
 
 .btn:hover {
-    background-color: rgba(0, 136, 169, 0.8);
+    background-color: #484d6d;
 }
 
 #hero-btn {
@@ -221,8 +208,8 @@ button:active {
 } */
 
 .col-3 {
-    flex-basis: 30%;
-    min-width: 300px;
+    flex-basis: 25%;
+    min-width: 400px;
     margin-bottom: 30px;
     background-color: #fff;
 }
@@ -241,8 +228,12 @@ button:active {
     padding-top: 10px;
 }
 
+.col-3 .price {
+    margin-bottom: 25px;
+}
+
 .col-mini-3 {
-    flex-basis: 25%;
+    flex-basis: 30%;
     background-color: #fff;
 }
 
@@ -263,18 +254,6 @@ button:active {
     padding-left: 25px;
     padding-right: 25px;
 }
-
-/* .col-4 {
-    flex-basis: 25%;
-    padding: 10px;
-    min-width: 200px;
-    margin-bottom: 50px;
-    transition: transform 0.5s;
-} */
-
-/* .col-4 img {
-    width: 100%;
-} */
 
 .grid-title {
     text-align: center;
@@ -357,9 +336,13 @@ small {
 .main-info-grid {
     margin: auto;    
     text-align: center;
-    max-width: 1300px;
+    max-width: 1290px;
     margin-left: 50px;
     margin-right: 50px;
+}
+
+.main-info-grid .row {
+    margin: auto;
 }
 
 .main-info-grid .col-3 {
@@ -424,7 +407,8 @@ small {
     background: #484d6d;
     color: #8a8a8a;
     font-size: 14px;
-    padding: 10px 0 20px;
+    padding-bottom: 20px;
+    /* padding-top: 5px; */
 }
 
 .footer p {
@@ -448,16 +432,27 @@ small {
 .footer-col-2 {
     flex: 1;
     text-align: center;
+    margin: auto;
+    width: 400px;
 }
 
 .footer-col-2 img {
     width: 180px;
     margin-bottom: 10px;
+    padding-top: 30px;
 }
 
 .footer-col-3, .footer-col-4 {
     flex-basis: 12%;
     text-align: center;
+}
+
+#footer-cart {
+    top: 2000px;
+}
+
+#footer-account {
+    margin-top: 200px;
 }
 
 ul {
@@ -653,7 +648,7 @@ th:last-child {
     margin: auto;
     /* box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.1); */
     border-radius: 20px;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
 .form-container span {
@@ -663,6 +658,7 @@ th:last-child {
     cursor: pointer;
     width: 100px;
     display: inline-block;
+    z-index: 999;
 }
 
 .form-btn {
@@ -671,10 +667,10 @@ th:last-child {
 
 .form-container form {
     max-width: 300px;
-    padding: 0 20px;
+    padding: 10px 0;
     position: absolute;
-    top: 100px;
-    transition: transform 0.5s;
+    top: 80px;
+    transition: transform 1s;
 }
 
 form input {
@@ -699,15 +695,15 @@ form .btn:focus {
     outline: none;
 }
 
-#loginForm {
+#LoginForm {
     left: -300px;    
 }
 
-#regForm {
+#RegForm {
     left: 0;
 }
 
-#indicator {
+#Indicator {
     width: 100px;
     border: none;
     background: #484d6d;
@@ -719,6 +715,10 @@ form .btn:focus {
 
 .sub-banner {
     background-color: #fff;
+    max-width: 1290px;
+    margin: auto;
+    padding-left: 15px;
+    padding-right: 15px;
 }
 
 #right {
@@ -730,7 +730,6 @@ form .btn:focus {
 #center {
     text-align: center;
 }
-
 
 
 
@@ -771,7 +770,7 @@ form .btn:focus {
         text-align: center;
     }
 
-    .col-2, .col-3, .col-4 {
+    .col-2, .col-3, .col-4, .col.col-mini-3 {
         flex-basis: 100%;
     }
 
