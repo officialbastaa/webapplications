@@ -255,6 +255,18 @@ button:active {
     padding-right: 25px;
 }
 
+.admin-container {
+    max-width: 1000px;
+    margin: auto;
+    margin-top: 60px;
+    margin-bottom: 100px;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-bottom: 100px;
+    border-radius: 20px;
+    background-color: #fff;
+}
+
 .grid-title {
     text-align: center;
     margin: auto;
@@ -658,7 +670,6 @@ th:last-child {
     cursor: pointer;
     width: 100px;
     display: inline-block;
-    z-index: 999;
 }
 
 .form-btn {
@@ -711,6 +722,19 @@ form .btn:focus {
     margin-top: 8px;
     transform: translateX(100px);
     transition: transform 0.5s;
+}
+
+.description {
+    resize: none;
+    width: 600px;
+    height: 100px;
+    /* border-style: none; */
+}
+
+.add-Product {
+    text-align: center;
+    margin: auto;
+    position: relative;
 }
 
 .sub-banner {

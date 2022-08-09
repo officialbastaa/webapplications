@@ -13,26 +13,26 @@ function setup() {
     currentInput.addEventListener("change", changedAmount)
   }
   
-  document.getElementById("affentheater").addEventListener("click", addAffentheater)
-  document.getElementById("baerenstark").addEventListener("click", addBaerenstark)
-  document.getElementById("eintagsfliege").addEventListener("click", addEintagsfliege)
-  document.getElementById("eselsbruecke").addEventListener("click", addEselsbruecke)
-  document.getElementById("frueherVogel").addEventListener("click", addFrueherVogel)
-  document.getElementById("hundemuede").addEventListener("click", addHundemuede)
-  document.getElementById("nachteule").addEventListener("click", addNachteule)
-  document.getElementById("naschkatze").addEventListener("click", addNaschkatze)
-  document.getElementById("schneckentempo").addEventListener("click", addSchneckentempo)
+  document.getElementById("affentheater").addEventListener("click", addAffentheater);
+  document.getElementById("baerenstark").addEventListener("click", addBaerenstark);
+  document.getElementById("eintagsfliege").addEventListener("click", addEintagsfliege);
+  document.getElementById("eselsbruecke").addEventListener("click", addEselsbruecke);
+  document.getElementById("frueherVogel").addEventListener("click", addFrueherVogel);
+  document.getElementById("hundemuede").addEventListener("click", addHundemuede);
+  document.getElementById("nachteule").addEventListener("click", addNachteule);
+  document.getElementById("naschkatze").addEventListener("click", addNaschkatze);
+  document.getElementById("schneckentempo").addEventListener("click", addSchneckentempo);
 }
 
 // Add products to shopping cart
 
-function addAffentheater(){
-  addNewItem ("<a href='details-affentheater.html'>Affentheater</a>", 19.99)
-  updatePrice()
+function addAffentheater(){ // Zum cart.js array hinzufuegen
+  addNewItem ("<a href='details-affentheater.html'>Affentheater</a>", 19.99);
+  updatePrice();
 }
 function addBaerenstark(){
-  addNewItem("<a href='details-baerenstark.html'>Bärenstark</a>", 24.99) 
-  updatePrice()
+  addNewItem("<a href='details-baerenstark.html'>Bärenstark</a>", 24.99);
+  updatePrice();
 }
 function addEintagsfliege(){
   addNewItem("<a href='details-eintagsfliege.html'>Eintagsfliege</a>", 19.99)
@@ -63,7 +63,7 @@ function addSchneckentempo(){
     updatePrice()
 }
 
-function addNewItem (name, price){
+function addNewItem (name, price){ // showNewItem zum Anzeigen des Arrays + onclick auf cart logo show 
     var newRow = document.createElement("tr")
     var contents = `
     <td><span class='itemName'>${name}</span></td>
