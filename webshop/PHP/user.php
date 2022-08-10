@@ -1,25 +1,34 @@
 <?php
 include('setupDB.php');
-
-
-//session_start();
+require_once ('functions.inc.php');
 
 
 // Holen: Name, Vorname, Email, Passwort
-$name = $_POST['name'];         // [...] müsste aus formular2.html Inhalt nehmen
-$vorname = $_POST['vorname'];
+$vorname = $_POST['vorname'];         
+$name = $_POST['name'];
 $email = $_POST['email'];
 $password = $_POST['passwort'];
+$pwdRepeat = $_POST["confirmPasswort"];
 
-/*
-// Speichern: Name, Vorname, Email und Passwort als Session-Daten
-$_SESSION['name'] = $name;
-$_SESSION['vorname'] = $vorname;
-$_SESSION['email'] = $email;
-$_SESSION['password'] = $password;
-*/
 
-//preparation of insert statement
+// Leere Eingabe
+if (emptyInputSignup($vorname, $name, $email, $password, $pwdRepeat) !== false) {
+    header("location: ../PHP/signup.php?error=emptyinput");
+    exit();
+}
+// Email fehlerhaft
+if (invalidEmail($email) !== false) {
+    header("location: ../PHP/signup.php?error=invalidemail");
+    exit();
+}
+// User existiert bereits
+if (emailExists($conn, $email) !== false){
+    header("location: ../PHP/signup.php?error=emailtaken");
+    exit();
+}
+
+
+// Preparation of insert statement
 $tname = 'nutzer';
 $name1 = 'name';
 $name2 = 'vorname';
@@ -28,12 +37,8 @@ $name4= 'password';
 $ins = "INSERT INTO $tname($name1, $name2, $name3, $name4) VALUES (?, ?, ?, ?)";
 $ps = $conn -> prepare($ins);
 
-/*
-// Für Übertragung des Namens zum Warenkorb (nicht fertig)
-echo "Hallo, $vorname $name! Das hier ist dein Warenkorb.<br/>";
-*/
 
-//function to insert a new user
+// // Function to insert a new user
 function insertUser($p, $n1, $n2, $n3, $n4) {
     $p -> bind_param('ssss', $n1, $n2, $n3, $n4);
     if (!$p -> execute()) {
@@ -48,7 +53,7 @@ $f3 = $email;
 $f4 = $password;
 
 
-//execution of the insertion function
+// Execution of the insertion function
 insertUser($ps, $f1, $f2, $f3, $f4);
 
 // close the connection
