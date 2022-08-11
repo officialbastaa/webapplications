@@ -37,7 +37,13 @@
                                     }
                                 ?>
                                 <button type="submit" name="submit">Login</button>
+                                <br>
+                                <br>
+                                <small>Noch Kein Konto?</small>
+                                <br>
+                              <a href="signup.php"><small>Hier Registrieren!</small></a>
                             </form>
+
                         </div>
                     </div>
                 </div>

@@ -23,7 +23,7 @@
                         </tr>
                     </table>
                     <br>
-                    
+
                     <!-- All Products -->
                     <div class="grid-title">
                         <h2>Tabelle aller Artikel</h2>
@@ -38,50 +38,6 @@
                             <td></td>
                         </tr>
                     </table>
-
-                    <!-- Add Product -->
-                    <div class="grid-title">
-                        <h2>Artikel hinzufügen</h2>
-                    </div>        
-                        <form action="http://localhost/EWAPP/PHP/article.php" method="post">
-                            <table>
-                                <tr>
-                                    <td><label for="produktname">Name</label></td>
-                                    <td><input type="text" name="produktname" id="produktname"></td>
-                                </tr>
-                                <tr>
-                                    <td><label for="preis">Preis</label></td>
-                                    <td><input type="text" name="preis" id="preis"></td>
-                                </tr>
-                                <tr>
-                                    <td><label for="menge">Menge</label></td>
-                                    <td><input type="text" name="menge" id="menge"></td>
-                                </tr>
-                                <tr>
-                                    <td><label for="foto">Foto 1-4</label></td>
-                                    <td><input type="file" name="bild" id="bild"></td>
-                            </tr>
-                                <tr>
-                                    <td><label for="foto"></label></td>
-                                    <td><input type="file" name="bild" id="bild"></td>
-                                </tr>
-                                <tr>
-                                    <td><label for="foto"></label></td>
-                                    <td><input type="file" name="bild" id="bild"></td>
-                                </tr>
-                                <tr>
-                                    <td><label for="foto"></label></td>
-                                    <td><input type="file" name="bild" id="bild"></td>
-                                </tr>
-                                <tr>
-                                    <td><label for="beschreibung">Beschreibung</label></td>
-                                    <td><textarea name="beschreibung" id="beschreibung" class="description"></textarea></td>
-                            </tr>
-                            </table>
-                        </form>
-                        <br>
-                        <button type="submit" value="Artikel hinzufügen">Artikel hinzufügen</button>
-                        <br>
 
                     <!-- All Carts -->
                     <div class="grid-title">
@@ -99,7 +55,7 @@
                         </tr>
                     </table>
                 </div>
-            </div>                
+            </div>
         </div>
 
 <?php include_once 'footer.php'; ?>

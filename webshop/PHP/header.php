@@ -28,6 +28,7 @@
                         if (isset($_SESSION["email"])) {
                             if ($_SESSION["email"] === "admin@minishop.de") {
                               echo "<li><a href='admin.php'>Admin</a></li>";
+                              echo "<li><a href='addArticle.php'>Artikel Hinzufügen</a></li>";
                             }
                             else {
                               echo "<li><a href='profil.php'>Profil page</a></li>";
@@ -36,7 +37,6 @@
                             echo "<li><a href='logout.inc.php'>Logout</a></li>";
                         }
                         else {
-                            echo "<li><a href='signup.php'>Sign up</a></li>";
                             echo "<li><a href='login.php'>Login</a></li>";
                         }
                     ?>
