@@ -9,7 +9,7 @@
                     <div class="grid-title">
                         <h2>Artikel hinzufügen</h2>
                     </div>
-                        <form action="http://localhost/EWAPP/webshop/PHP/article.php" method="post" enctype="multipart/form-data">
+                        <form action="article.php" method="post" enctype="multipart/form-data">
                             <table>
                                 <tr>
                                     <td><label for="produktname">Name</label></td>
