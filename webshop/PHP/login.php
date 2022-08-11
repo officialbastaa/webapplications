@@ -1,4 +1,4 @@
-<?php   
+<?php
     include_once 'header.php';
 ?>
 
@@ -22,21 +22,21 @@
                                     </tr>
                                     <tr>
                                         <td><label for="passwort">Passwort</label></td>
-                                        <td><input type="password" name="passwort" id="passwort" placeholder="*****"></td>        
+                                        <td><input type="password" name="passwort" id="passwort" placeholder="*****"></td>
                                     </tr>
                                 </table>
                                 <br>
                                 <?php
                                     if (isset($_GET["error"])) {
-                                        if ($_GET["error"] == "emptyinput") {
+                                        if ($_GET["error"] == "emptyInput") {
                                             echo "<p>Fülle alle Felder aus!</p><br>";
-                                        } 
+                                        }
                                         else if ($_GET["error"] == "wronglogin"){
                                             echo "<p>Falsche Login Eingaben!</p><br>";
                                         }
                                     }
                                 ?>
-                                <button type="submit">Login</button>                                
+                                <button type="submit" name="submit">Login</button>
                             </form>
                         </div>
                     </div>
@@ -44,6 +44,6 @@
             </div>
         </div>
 
-<?php   
+<?php
     include_once 'footer.php';
 ?>

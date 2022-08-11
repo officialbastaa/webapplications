@@ -1,5 +1,4 @@
 <?php
-
 // Leere Eingabe Singup
 function emptyInputSignup($vorname, $name, $email, $password, $pwdRepeat) {
     $result;
@@ -57,6 +56,17 @@ function emptyInputLogin($email, $password) {
     return $result;
 }
 
+function samePasswords ($inputPwd, $dbPwd){
+  $result;
+  if ($dbPwd === $inputPwd) {
+      $result = true;
+  } else {
+      $result = false;
+  }
+  return $result;
+
+}
+
 // Login User
 function loginUser($conn, $email, $password) {
     $emailExists = emailExists($conn, $email);
@@ -67,17 +77,18 @@ function loginUser($conn, $email, $password) {
     }
 
     $pwdDB = $emailExists["password"];
-    $checkPwd = password_verify($password, $pwdDB);
+    $checkPwd = samePasswords($password, $pwdDB);
 
     if ($checkPwd === false) {
         header("location: ../PHP/login.php?error=wronglogin");
         exit();
     } else if ($checkPwd === true) {
         session_start();
-        $_SESSION["id"] = $emailExists["id"];
+        $_SESSION["id"] = $emailExists["nid"];
         $_SESSION["email"] = $emailExists["email"];
-        $_SESSION["userName"] = $emailExists["vorname"];
-        header("location: ../PHP/index.php");
+        $_SESSION["vorname"] = $emailExists["vorname"];
+
+        header("location: ../PHP/index.php?");
         exit();
     }
 }

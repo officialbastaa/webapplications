@@ -18,18 +18,23 @@
         <!-- Nav Section -->
         <div class="navbar">
             <div class="logo">
-                <a href="index.php"><img src="../images/logo_sw.png" alt="Logo" width="100px"></a> 
+                <a href="index.php"><img src="../images/logo_sw.png" alt="Logo" width="100px"></a>
             </div>
             <nav>
                 <ul>
                     <li><a href="index.php">Home</a></li>
                     <li><a href="products.php">Produkte</a></li>
-                    <li><a href="admin.php">Admin</a></li>
                     <?php
-                        if (isset($_SESSION["vorname"])) {
-                            echo "<li><a href='profil.php'>Profil page</a></li>";
+                        if (isset($_SESSION["email"])) {
+                            if ($_SESSION["email"] === "admin@minishop.de") {
+                              echo "<li><a href='admin.php'>Admin</a></li>";
+                            }
+                            else {
+                              echo "<li><a href='profil.php'>Profil page</a></li>";
+                            }
+
                             echo "<li><a href='logout.inc.php'>Logout</a></li>";
-                        } 
+                        }
                         else {
                             echo "<li><a href='signup.php'>Sign up</a></li>";
                             echo "<li><a href='login.php'>Login</a></li>";

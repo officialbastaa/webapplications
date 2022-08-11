@@ -4,7 +4,7 @@ require_once ('functions.inc.php');
 
 
 // Holen: Name, Vorname, Email, Passwort
-$vorname = $_POST['vorname'];         
+$vorname = $_POST['vorname'];
 $name = $_POST['name'];
 $email = $_POST['email'];
 $password = $_POST['passwort'];
@@ -46,6 +46,21 @@ function insertUser($p, $n1, $n2, $n3, $n4) {
     }
     echo ($n1 . " " . $n2 .  " wurde erfolgreich hinzugefügt! <br>");
 }
+
+
+if ($result = $conn->query("SELECT * FROM $tname LIMIT 1")){
+
+    if (!$obj = $result->fetch_object()){
+
+      $g1 = 'Admin';
+      $g2 = 'Admin';
+      $g3 = 'admin@minishop.de';
+      $g4 = '12345Aa';
+
+      insertUser($ps, $g1, $g2, $g3, $g4);
+      echo "<br>";
+    }
+  }
 
 $f1 = $name;
 $f2 = $vorname;
