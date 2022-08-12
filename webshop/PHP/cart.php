@@ -1,4 +1,6 @@
-<?php include_once 'header.php'; ?>
+<?php include_once 'header.php'; 
+    require_once 'setupDB.php';
+?>
 
 <!-- Cart Items Details -->
 <div class="content-container">
@@ -25,16 +27,26 @@
                         <th>Artikel entfernen</th>                        
                     </tr>
                     <?php  
-                    //  $_SESSION["warenkorb"]
-                        echo "
-                            <tr>
-                                <td><span class='itemName'>testname</span></td>
-                                <td><input type='number' class='itemAmount' value='1'></td>
-                                <td>15</td>
-                                <td></td>
-                                <td><button type='button' class='remove-button'>Entfernen</td>
-                            </tr>
-                        ";
+                        for($i = 0 ; $i < count($_SESSION["warenkorb"]) ; $i++) {
+                            $cID = $_SESSION["warenkorb"][$i];
+                        
+                            $sql1 = "SELECT name, preis, anzahl FROM artikel WHERE aid = '$cID';";
+                            $result = $conn -> query($sql1);
+                            $data = mysqli_fetch_assoc($result);
+                            $name = $data["name"];
+                            $preis = $data["preis"];
+                            $anzahl = $data["anzahl"];
+                        
+                            echo "
+                                <tr>
+                                    <td><span class='itemName'>$name</span></td>
+                                    <td><input type='number' class='itemAmount' value='1'></td>
+                                    <td>$preis</td>
+                                    <td></td>
+                                    <td><button type='button' class='remove-button'>Entfernen</td>
+                                </tr>
+                            ";
+                        }
                     ?>
                 </table>
                 <table>
