@@ -4,8 +4,15 @@
 <div class="content-container">
             <!-- Personalization -->
             <div class="grid-title">
-                <h1>Hallo <span id="userName"></span>! Das ist dein Warenkorb.</h1>
-            </div>
+                <?php 
+                    if (isset($_SESSION["vorname"])) {
+                        echo "<h1>Hallo " . $_SESSION["vorname"] . ", das ist dein Warenkorb!</h1>";
+                    } 
+                    else {
+                        echo "<h1>Hallo, das ist dein Warenkorb!</h1>";
+                    }                            
+                    ?>
+                </div>
 
             <!-- Cart -->
             <div class="small-container cart-page">

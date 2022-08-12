@@ -44,7 +44,7 @@ include('setupDB.php');
 
                     <!-- All Orders -->
                     <div class="grid-title">
-                        <h2>Tabelle aller Bstellungen</h2>
+                        <h2>Tabelle aller Bestellungen</h2>
                     </div>
                     <table>
                         <tr>
