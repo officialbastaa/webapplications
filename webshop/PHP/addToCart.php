@@ -12,10 +12,11 @@ require_once 'functions.inc.php';
                         header("location: ../PHP/products.php?error=itemadded");
                         exit();
                     }
-                
-                    // for($i = 0 ; $i < count($_SESSION['warenkorb']) ; $i++) {
-                    //     echo $_SESSION['warenkorb'][$i];
-                        
-                    // }  
+                }
+
+                if (isset($_POST["removeItem"])) { 
+                    $id = $_POST["removeItem"];    
+                    // unset($_SESSION["warenkorb"][$id]);              
+                    // $_SESSION["warenkorb"] = array_diff($_SESSION["warenkorb"], $id);
                 }
                 ?>

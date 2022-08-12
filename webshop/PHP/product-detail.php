@@ -17,23 +17,8 @@ require_once 'setupDB.php';
             $name = $data["name"];
             $preis = $data["preis"];
             $beschreibung = $data["beschreibung"];
-            $bild = '<img src="data:image/jpeg;base64,'.base64_encode($data["bild"]).'" height="500" width="400"/>';
-                                
-                                    // if (isset($_SESSION['cart'])) {
-                                    //     $item_array_id = array_column($_SESSION['cart'], "product_id");
-                                    //     print_r($item_array_id);
-
-                                    //     if(in_array($_POST['product_id'], $item_array_id)) {
-                                    //         echo "<script>alert('Produkt ist bereits im Warenkorb!')</script>";
-                                    //         echo "<script>window.location = 'products.php</script>";
-                                    //     }
-                                    // } else {
-                                    //     $item_array = array('product_id' => $_POST['product_id']);                                
-                                    // }
-
-                                    // $_SESSION['cart'][0] = $item_array;
-                                    // print_r($_SESSION['cart']);
-                                
+            $bild = '<img src="data:image/jpeg;base64,'.base64_encode($data["bild"]).'" height="500" width="450"/>';
+                                                                
             echo "
                 <div class='small-container single-product'>
                     <div class='row'>

@@ -15,7 +15,7 @@
                             }                            
                         ?>
                         <p>In Zusammenarbeit mit lokalen Röstereien haben wir drei neue geschmackvolle und einzigartige Sorten kreiert.</p>
-                        <a href="products.html"><button class="btn">Erfahre mehr &#8594;</button></a>
+                        <a href="products.php"><button class="btn">Erfahre mehr &#8594;</button></a>
                     </div>
                     <div class="col-2">
                         <a href="products.html"><img src="../images/hero_1.png" alt="hero1"></a>
@@ -94,7 +94,7 @@
                             <h1>FOMO?</h1>
                             <small>Du willst auch den leckersten Kaffee aus dem wunderschönen Deutschland probieren? Dann warte nicht lange ab und tauche ein in die Welt von Student Coffee! Für jeden Geschmack gibt es die passende Röstung. Probiere es aus!</small>
                             <br>
-                            <a href="products.html" class="btn">Buy Now &#8594;</a>
+                            <a href="products.php" class="btn">Buy Now &#8594;</a>
                         </div>
                     </div>
                 </div>

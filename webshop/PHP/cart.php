@@ -1,4 +1,5 @@
-<?php include_once 'header.php'; 
+<?php 
+    include_once 'header.php'; 
     require_once 'setupDB.php';
 ?>
 
@@ -43,7 +44,9 @@
                                     <td><input type='number' class='itemAmount' value='1'></td>
                                     <td>$preis</td>
                                     <td></td>
-                                    <td><button type='button' class='remove-button'>Entfernen</td>
+                                    <form action='addToCart.php' method='post'>
+                                        <td><button type='button' name='removeItem' value='$cID' class='remove-button'>Entfernen</td>
+                                    </form>
                                 </tr>
                             ";
                         }
@@ -51,13 +54,11 @@
                 </table>
                 <table>
                     <tr>                        
-                        <!-- <hr> -->
                         <td style="background: #FFE047; font-weight: bold; font-size: 16px; padding-left: 10px;">Gesamt:</td>
                         <td style="background: #FFE047; font-weight: bold;"><span id="totalPrice"></span> €</td>
                     </tr>
                 </table>   
             </div> 
-            <!-- <button type="button" id="affentheater">Zum Warenkorb</button>                       -->
         </div>
 
 <?php include_once 'footer.php'; ?>

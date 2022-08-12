@@ -68,6 +68,7 @@ header {
     margin: auto;
     padding-left: 200px;
     padding-right: 200px;
+    z-index: 999;
 }
 
 nav {
