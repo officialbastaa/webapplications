@@ -43,7 +43,6 @@
                     <?php
                         for($i = 0 ; $i < count($_SESSION["warenkorb"]) ; $i++) {
                             $cID = $_SESSION["warenkorb"][$i];
-
                             $sql1 = "SELECT name, preis, anzahl FROM artikel WHERE aid = '$cID';";
                             $result = $conn -> query($sql1);
                             $data = mysqli_fetch_assoc($result);

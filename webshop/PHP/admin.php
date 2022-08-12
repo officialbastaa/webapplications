@@ -48,17 +48,30 @@ include('setupDB.php');
                     </div>
                     <table>
                         <tr>
-                            <th>Name</th>
-                            <th>Gesamtanzahl der Artikel</th>
-                            <th>Gesamtpreis</th>
-                            <th>Details</th>
+                            <th>Email</th>
+                            <th>Artikel</th>
+                            <th>Anzahl</th>
+                            <th></th>
                         </tr>
-                        <tr>
-                            <td></td>
-                        </tr>
+                        <?php
+
+                        $sql1 = "SELECT artikel.name, bestellungen.anzahl, preis, nutzer.email, bestellungen.bestelldatum FROM bestellungen, artikel, nutzer WHERE bestellungen.aid = artikel.aid && bestellungen.nid = nutzer.nid;";
+                        $result = $conn -> query($sql1);
+                        while($row = mysqli_fetch_assoc($result)){
+                          $email = $row["email"];
+                          $artikelname = $row["name"];
+                          $anzahl = $row["anzahl"];
+                          echo "<tr>
+                                  <td>$email</td>
+                                  <td>$artikelname</td>
+                                  <td>$anzahl</td>
+                                  <td><button type='button' name='orderDetails'>Details</button></td>
+                                </tr>";
+                        }
+                         ?>
                     </table>
 
-                    <!-- All Users -->
+                    <!-- Articles -->
                     <div class="grid-title">
                         <h2>Tabelle aller Artikel</h2>
                     </div>
@@ -74,6 +87,7 @@ include('setupDB.php');
                         $sql1 = "SELECT * FROM artikel;";
                         $result = $conn -> query($sql1);
                         while($row = mysqli_fetch_assoc($result)){
+                          $id = $row["aid"];
                           $name = $row["name"];
                           $preis = $row["preis"];
                           $anzahl = $row["anzahl"];
@@ -81,7 +95,11 @@ include('setupDB.php');
                               <td>$name</td>
                               <td>$preis</td>
                               <td>$anzahl</td>
-                              <td></td>
+                              <td>
+                                <form action='deleteUser.php' method='post'>
+                                  <center><button type='submit' name='deleteArticle' value='$id'>Artikel Löschen</button></center>
+                                </form>
+                              </td>
                                 </tr>";
                         }
                          ?>
