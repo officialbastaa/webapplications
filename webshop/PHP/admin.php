@@ -1,4 +1,7 @@
-<?php include_once 'header.php'; ?>
+<?php
+include_once 'header.php';
+include('setupDB.php');
+ ?>
 
 <!-- Admin Information -->
 <div class="content-container">
@@ -17,35 +20,35 @@
                             <th>Name</th>
                             <th>Vorname</th>
                             <th style="width: 40%;">Email</th>
+                            <th></th>
                         </tr>
-                        <tr>
-                            <td></td>
-                        </tr>
+                        <?php
+
+                        $sql1 = "SELECT * FROM nutzer;";
+                        $result = $conn -> query($sql1);
+                        while($row = mysqli_fetch_assoc($result)){
+                          $vorname = $row["vorname"];
+                          $nachname = $row["name"];
+                          $email = $row["email"];
+                          echo "<tr>
+                              <td>$nachname</td>
+                              <td>$vorname</td>
+                              <td>$email</td>
+                              <td></td>
+                                </tr>";
+                        }
+                         ?>
                     </table>
                     <br>
 
-                    <!-- All Products -->
+
+                    <!-- All Orders -->
                     <div class="grid-title">
-                        <h2>Tabelle aller Artikel</h2>
+                        <h2>Tabelle aller Bstellungen</h2>
                     </div>
                     <table>
                         <tr>
                             <th>Name</th>
-                            <th>Preis</th>
-                            <th>Menge</th>
-                        </tr>
-                        <tr>
-                            <td></td>
-                        </tr>
-                    </table>
-
-                    <!-- All Carts -->
-                    <div class="grid-title">
-                        <h2>Tabelle aller Warenkörbe</h2>
-                    </div>
-                    <table>
-                        <tr>
-                            <th>Nutzername</th>
                             <th>Gesamtanzahl der Artikel</th>
                             <th>Gesamtpreis</th>
                             <th>Details</th>
