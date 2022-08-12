@@ -5,6 +5,18 @@
 
 <!-- Featured Products -->
 <div class="content-container">
+    <?php
+        if (isset($_GET["error"])) {
+            if ($_GET["error"] == "itemalreadyadded") {
+                echo "<h2 style='color: red; text-align: center'>Der Artikel befindet sich bereits im Warenkorb!</h2><br>";
+            }
+            else if ($_GET["error"] == "itemadded") {
+                echo "<h2 style='color: green; text-align: center'>Der Artikel wurde zum Warenkorb hinzugefügt!</h2><br>";
+            }
+
+        }
+    ?>
+
             <div class="grid-title">
                 <h1>Unsere Sorten</h1>
             </div>        
@@ -19,17 +31,16 @@
                                 $name = $row["name"];
                                 $preis = $row["preis"];
                                 $beschreibung = $row["beschreibung"];
-                                $bild = '<img src="data:image/jpeg;base64,'.base64_encode($row["bild"]).'" height="450" width="100"/>';
+                                $bild = '<img src="data:image/jpeg;base64,'.base64_encode($row["bild"]).'" height="300" width="50"/>';
 
                                 echo "
                                 <div class='col-3'>
                                     <span>$bild</span>
                                     <h4>$name</h4>
-                                    <p class='price'>€$preis</p>
-                                    <p>$beschreibung</p>
+                                    <p class='price'>$preis €</p>
+                                    <br>
                                     <form action='product-detail.php' method='post'>
                                         <button type='submit' name='getToProduct' value='$id'>Zum Produkt</button>
-                                        <input type='hidden' name='product_id' value='$id'>
                                     </form>
                                 </div>
                                 ";

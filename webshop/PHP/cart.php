@@ -22,18 +22,30 @@
                         <th>Menge</th>
                         <th>Einzelpreis in €</th>
                         <th>Gesamtpreis in €</th>
-                        <th>Artikel entfernen</th>
+                        <th>Artikel entfernen</th>                        
                     </tr>
+                    <?php  
+                    //  $_SESSION["warenkorb"]
+                        echo "
+                            <tr>
+                                <td><span class='itemName'>testname</span></td>
+                                <td><input type='number' class='itemAmount' value='1'></td>
+                                <td>15</td>
+                                <td></td>
+                                <td><button type='button' class='remove-button'>Entfernen</td>
+                            </tr>
+                        ";
+                    ?>
                 </table>
                 <table>
-                    <tr>
+                    <tr>                        
                         <!-- <hr> -->
                         <td style="background: #FFE047; font-weight: bold; font-size: 16px; padding-left: 10px;">Gesamt:</td>
                         <td style="background: #FFE047; font-weight: bold;"><span id="totalPrice"></span> €</td>
                     </tr>
                 </table>   
             </div> 
-            <button type="button" id="affentheater">Zum Warenkorb</button>                      
+            <!-- <button type="button" id="affentheater">Zum Warenkorb</button>                       -->
         </div>
 
 <?php include_once 'footer.php'; ?>

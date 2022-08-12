@@ -12,56 +12,10 @@ function setup() {
     var currentInput = amountInputs[i]
     currentInput.addEventListener("change", changedAmount)
   }
-  
-  document.getElementById("affentheater").addEventListener("click", addAffentheater);
-  document.getElementById("baerenstark").addEventListener("click", addBaerenstark);
-  document.getElementById("eintagsfliege").addEventListener("click", addEintagsfliege);
-  document.getElementById("eselsbruecke").addEventListener("click", addEselsbruecke);
-  document.getElementById("frueherVogel").addEventListener("click", addFrueherVogel);
-  document.getElementById("hundemuede").addEventListener("click", addHundemuede);
-  document.getElementById("nachteule").addEventListener("click", addNachteule);
-  document.getElementById("naschkatze").addEventListener("click", addNaschkatze);
-  document.getElementById("schneckentempo").addEventListener("click", addSchneckentempo);
 }
 
 // Add products to shopping cart
 
-function addAffentheater(){ // Zum cart.js array hinzufuegen
-  addNewItem ("<a href='details-affentheater.html'>Affentheater</a>", 19.99);
-  updatePrice();
-}
-function addBaerenstark(){
-  addNewItem("<a href='details-baerenstark.html'>Bärenstark</a>", 24.99);
-  updatePrice();
-}
-function addEintagsfliege(){
-  addNewItem("<a href='details-eintagsfliege.html'>Eintagsfliege</a>", 19.99)
-  updatePrice()
-}
-function addEselsbruecke(){
-    addNewItem ("<a href='details-eselsbruecke.html'>Eselsbrücke</a>", 19.99)
-    updatePrice()
-}
-function addFrueherVogel(){
-    addNewItem("<a href='details-frueher_vogel.html'>Früher Vogel</a>", 24.99) 
-    updatePrice()
-}
-function addHundemuede(){
-    addNewItem("<a href='details-hundemuede.html'>Hundemüde</a>", 19.99)
-    updatePrice()
-}
-function addNachteule(){
-    addNewItem ("<a href='details-nachteule.html'>Nachteule</a>", 19.99)
-    updatePrice()
-}
-function addNaschkatze(){
-    addNewItem("<a href='details-naschkatze.html'>Naschkatze</a>", 24.99) 
-    updatePrice()
-}
-function addSchneckentempo(){
-    addNewItem("<a href='details-schneckentempo.html'>Schneckentempo</a>", 19.99)
-    updatePrice()
-}
 
 function addNewItem (name, price){ // showNewItem zum Anzeigen des Arrays + onclick auf cart logo show 
     var newRow = document.createElement("tr")
@@ -113,20 +67,3 @@ function addNewItem (name, price){ // showNewItem zum Anzeigen des Arrays + oncl
   }
   
   updatePrice();
-
-
-
-/* Calculate Sum of Shopping Cart */
-var table = document.getElementById("warenkorb");
-var sum = 0;
-var amount = 0;
-
-for (var i = 1; i < 3; i++) {
-    var price = table.rows[i].cells[1].innerHTML * table.rows[i].cells[2].innerHTML;
-    table.rows[i].cells[3].innerHTML = price;
-    sum += price;
-    table.rows[3].cells[3].innerHTML = sum;
-
-    amount += parseInt(table.rows[i].cells[1].innerHTML);
-    table.rows[3].cells[1].innerHTML = amount;
-}
