@@ -16,7 +16,10 @@ require_once 'functions.inc.php';
 
                 if (isset($_POST["removeItem"])) { 
                     $id = $_POST["removeItem"];    
-                    // unset($_SESSION["warenkorb"][$id]);              
-                    // $_SESSION["warenkorb"] = array_diff($_SESSION["warenkorb"], $id);
+                    $key = array_search($_GET[$id], $_SESSION["warenkorb"]);
+                    if ($key !== false) {
+                        unset($_SESSION["warenkorb"][$key]);  
+                        $_SESSION["warenkorb"] = array_values($_SESSION["warenkorb"]);               
+                    }
                 }
                 ?>

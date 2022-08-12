@@ -45,7 +45,7 @@
                                     <td>$preis</td>
                                     <td></td>
                                     <form action='addToCart.php' method='post'>
-                                        <td><button type='button' name='removeItem' value='$cID' class='remove-button'>Entfernen</td>
+                                        <td><button type='submit' name='removeItem' value='$cID' class='remove-button'>Entfernen</td>
                                     </form>
                                 </tr>
                             ";
