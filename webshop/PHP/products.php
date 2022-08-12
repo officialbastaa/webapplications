@@ -1,5 +1,5 @@
-<?php 
-    include_once 'header.php'; 
+<?php
+    include_once 'header.php';
     require_once 'functions.inc.php';
     require_once 'setupDB.php';
 ?>
@@ -14,12 +14,15 @@
             else if ($_GET["error"] == "itemadded") {
                 echo "<h2 style='color: green; text-align: center'>Der Artikel wurde zum Warenkorb hinzugefügt!</h2><br>";
             }
+            elseif ($_GET["error"] == "notloggedin") {
+                echo "<h2 style='color: red; text-align: center'>Sie müssen sich einloggen um Artikel zum Warenkorb hinzuzufügen</h2><br>";
+            }
 
         }
     ?>
         <div class="grid-title">
             <h1>Unsere Sorten</h1>
-        </div>        
+        </div>
         <div class="grid">
             <div class="small-container">
                 <div class="row">
@@ -32,7 +35,7 @@
                             $preis = $row["preis"];
                             $beschreibung = $row["beschreibung"];
                             $bild = '<img src="data:image/jpeg;base64,'.base64_encode($row["bild"]).'" height="375" width="50"/>';
-                                
+
                             echo "
                                 <div class='col-3'>
                                     <span>$bild</span>
@@ -44,11 +47,10 @@
                                     </form>
                                 </div>
                             ";
-                        }                        
-                    ?>                                            
+                        }
+                    ?>
                 </div>
             </div>
         </div>
 
 <?php include_once 'footer.php'; ?>
-

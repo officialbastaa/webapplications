@@ -1,18 +1,31 @@
 <?php include_once 'header.php'; ?>
 
 <!-- Hero -->
+<div class="col-3" id="center">
+    <?php
+      if (isset($_GET["error"])) {
+          if ($_GET["error"] == "userdeleted") {
+              echo "<h2 text-align: center'>Ihr Konto wurde erfolgreich gelöscht.</h2><br>";
+          }
+          elseif ($_GET["error"] == "notloggedin") {
+              echo "<h2 style='color: red; text-align: center'>Sie müssen sich einloggen um ihren Warenborb anzusehen</h2><br>";
+          }
+      }
+
+     ?>
+</div>
 <div class="hero" id="yellow">
             <div class="container">
                 <div class="row">
                     <div class="col-2">
 
-                        <?php 
+                        <?php
                             if (isset($_SESSION["vorname"])) {
                                 echo "<h1>Hallo " . $_SESSION["vorname"] . ", probiere jetzt unsere neuen Sorten!</h1>";
-                            } 
+                            }
                             else {
                                 echo "<h1>Probiere jetzt unsere neuen Sorten!</h1>";
-                            }                            
+                            }
                         ?>
                         <p>In Zusammenarbeit mit lokalen Röstereien haben wir drei neue geschmackvolle und einzigartige Sorten kreiert.</p>
                         <a href="products.php"><button class="btn">Erfahre mehr &#8594;</button></a>
@@ -20,7 +33,7 @@
                     <div class="col-2">
                         <a href="products.html"><img src="../images/hero_1.png" alt="hero1"></a>
                     </div>
-                </div>    
+                </div>
             </div>
         </div>
 
@@ -28,7 +41,7 @@
         <div class="sub-banner">
             <div class="row">
                 <div class="col-3" id="right">
-                    <p>In Deutschland geröstet <img src="../images/sun.png" alt="Sun" style="height: 20px; width: 20px;"></p>                                            
+                    <p>In Deutschland geröstet <img src="../images/sun.png" alt="Sun" style="height: 20px; width: 20px;"></p>
                 </div>
                 <div class="col-3" id="center">
                     <div class="row">
@@ -54,7 +67,7 @@
                 </div>
             </div>
         </div>
-            
+
             <hr style="width: 1200px; margin: auto; margin-bottom: 50px;">
 
             <!-- Inforamtion -->

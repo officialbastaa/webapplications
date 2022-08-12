@@ -57,7 +57,38 @@ include('setupDB.php');
                             <td></td>
                         </tr>
                     </table>
+
+                    <!-- All Users -->
+                    <div class="grid-title">
+                        <h2>Tabelle aller Artikel</h2>
+                    </div>
+                    <table>
+                        <tr>
+                            <th>Name</th>
+                            <th>Preis in €</th>
+                            <th style="width: 40%;">Anzahl</th>
+                            <th></th>
+                        </tr>
+                        <?php
+
+                        $sql1 = "SELECT * FROM artikel;";
+                        $result = $conn -> query($sql1);
+                        while($row = mysqli_fetch_assoc($result)){
+                          $name = $row["name"];
+                          $preis = $row["preis"];
+                          $anzahl = $row["anzahl"];
+                          echo "<tr>
+                              <td>$name</td>
+                              <td>$preis</td>
+                              <td>$anzahl</td>
+                              <td></td>
+                                </tr>";
+                        }
+                         ?>
+                    </table>
+                    <br>
                 </div>
+
             </div>
         </div>
 

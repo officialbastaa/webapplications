@@ -65,10 +65,14 @@ include('setupDB.php');
                               <td>$passwort</td>
                               <td></td>
                           </tr>";
-                          // DELETE FROM nutzer WHERE email = $_SESSION["email"];
+
 
                          ?>
                     </table>
                     <br>
+                    <form action='deleteUser.php' method='post'>
+                      <center><button type="submit" name="deleteClicked" value=''>Konto Löschen</button></center>
+                    </form>
+
 
 <?php include_once 'footer.php'; ?>
