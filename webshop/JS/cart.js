@@ -1,11 +1,11 @@
 window.addEventListener("load", setup)
 
 function setup() {
-  var removeButtons = document.getElementsByClassName("remove-button")
-  for (var i=0; i < removeButtons.length; i++){
-    var currentButton = removeButtons[i]
-    currentButton.addEventListener("click", removeItem)
-  }
+  // var removeButtons = document.getElementsByClassName("remove-button")
+  // for (var i=0; i < removeButtons.length; i++){
+  //   var currentButton = removeButtons[i]
+  //   currentButton.addEventListener("click", removeItem)
+  // }
   
   var amountInputs = document.getElementsByClassName("itemAmount")
   for (var i=0; i < amountInputs.length; i++){
@@ -28,15 +28,15 @@ function addNewItem (name, price){ // showNewItem zum Anzeigen des Arrays + oncl
     newRow.innerHTML = contents
     var cart = document.getElementById("warenkorb")
     cart.append(newRow)
-    newRow.getElementsByClassName("remove-button")[0].addEventListener("click", removeItem)
+    // newRow.getElementsByClassName("remove-button")[0].addEventListener("click", removeItem)
     newRow.getElementsByClassName("itemAmount")[0].addEventListener("change", changedAmount)
   }
   
-  function removeItem(event){
-    var clicked_button = event.target
-    clicked_button.parentElement.parentElement.remove()
-    updatePrice()
-  }
+  // function removeItem(event){
+  //   var clicked_button = event.target
+  //   clicked_button.parentElement.parentElement.remove()
+  //   updatePrice()
+  // }
   
   function changedAmount(event){
     var newInput = event.target

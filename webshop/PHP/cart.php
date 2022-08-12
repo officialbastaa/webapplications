@@ -5,6 +5,13 @@
 
 <!-- Cart Items Details -->
 <div class="content-container">
+<?php
+        if (isset($_GET["error"])) {
+            if ($_GET["error"] == "itemremoved") {
+                echo "<h2 style='color: green; text-align: center'>Der Artikel wurde aus dem Warenkorb entfernt!</h2><br>";
+            }
+        }
+    ?>
             <!-- Personalization -->
             <div class="grid-title">
                 <?php 
@@ -44,8 +51,8 @@
                                     <td><input type='number' class='itemAmount' value='1'></td>
                                     <td>$preis</td>
                                     <td></td>
-                                    <form action='addToCart.php' method='post'>
-                                        <td><button type='submit' name='removeItem' value='$cID' class='remove-button'>Entfernen</td>
+                                    <form action='removeFromCart.php' method='post'>
+                                        <td><button type='submit' name='removeItem' value='$cID'>Entfernen</td>
                                     </form>
                                 </tr>
                             ";

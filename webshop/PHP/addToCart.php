@@ -13,13 +13,4 @@ require_once 'functions.inc.php';
                         exit();
                     }
                 }
-
-                if (isset($_POST["removeItem"])) { 
-                    $id = $_POST["removeItem"];    
-                    $key = array_search($_GET[$id], $_SESSION["warenkorb"]);
-                    if ($key !== false) {
-                        unset($_SESSION["warenkorb"][$key]);  
-                        $_SESSION["warenkorb"] = array_values($_SESSION["warenkorb"]);               
-                    }
-                }
                 ?>
