@@ -10,6 +10,14 @@ include('setupDB.php');
                     <h1>Hallo Admin!</h1>
                     <p>Hier kannst du alle Informationen über deinen Webshop einsehen.</p>
                 </div>
+                <?php
+                if (isset($_GET["error"])) {
+                  if ($_GET["error"] == "articledeleted") {
+                      echo "<h2 style='color: green; text-align: center'>Artikel wurde gelöscht.</h2><br>";
+                  }
+                }
+
+                 ?>
                 <div class="admin-container">
                     <!-- All Users -->
                     <div class="grid-title">
@@ -49,13 +57,13 @@ include('setupDB.php');
                     <table>
                         <tr>
                             <th>Email</th>
-                            <th></th>
                             <th>Bestelldatum</th>
+                            <th>Bestätigt?</th>
                             <th></th>
                         </tr>
                         <?php
 
-                        $sql1 = "SELECT artikel.name, bestellungen.anzahl, nutzer.email, bestellungen.bid, bestellungen.bestelldatum FROM bestellungen, artikel, nutzer WHERE bestellungen.aid = artikel.aid && bestellungen.nid = nutzer.nid;";
+                        $sql1 = "SELECT artikel.name, bestellungen.anzahl, nutzer.email, bestellungen.bid, bestellungen.bestelldatum, bestellungen.bestaetigt FROM bestellungen, artikel, nutzer WHERE bestellungen.aid = artikel.aid && bestellungen.nid = nutzer.nid;";
                         $result = $conn -> query($sql1);
                         while($row = mysqli_fetch_assoc($result)){
                           $email = $row["email"];
@@ -63,10 +71,11 @@ include('setupDB.php');
                           $anzahl = $row["anzahl"];
                           $bid = $row["bid"];
                           $date = $row["bestelldatum"];
+                          $confirmation = $row["bestaetigt"];
                           echo "<tr>
                                   <td>$email</td>
-                                  <td></td>
                                   <td>$date</td>
+                                  <td>$confirmation</td>
                                   <td>
                                     <form action='order-detail.php' method='post'>
                                       <button type='submit' name='orderDetails' value='$bid'>Details</button>

@@ -66,13 +66,48 @@ include('setupDB.php');
                               <td></td>
                           </tr>";
 
-
                          ?>
                     </table>
                     <br>
                     <form action='deleteUser.php' method='post'>
                       <center><button type="submit" name="deleteClicked" value=''>Konto Löschen</button></center>
                     </form>
+
+
+                    <!-- All Orders -->
+                    <div class="grid-title">
+                        <h2>Deine bestellungen</h2>
+                    </div>
+                    <table>
+                        <tr>
+                            <th>Bestelldatum</th>
+                            <th>Bestätigt?</th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                        <?php
+
+                        $email = $_SESSION["email"];
+
+                        $sql1 = "SELECT artikel.name, bestellungen.anzahl, nutzer.email, bestellungen.bid, bestellungen.bestelldatum, bestellungen.bestaetigt FROM bestellungen, artikel, nutzer WHERE bestellungen.aid = artikel.aid && bestellungen.nid = nutzer.nid && nutzer.email = '$email';";
+                        $result = $conn -> query($sql1);
+                        while($row = mysqli_fetch_assoc($result)){
+                          $bid = $row["bid"];
+                          $date = $row["bestelldatum"];
+                          $confirmation = $row["bestaetigt"];
+                          echo "<tr>
+                                  <td>$date</td>
+                                  <td>$confirmation</td>
+                                  <td></td>
+                                  <td>
+                                    <form action='order-detail.php' method='post'>
+                                      <button type='submit' name='userOrderDetails' value='$bid'>Details</button>
+                                    </form>
+                                  </td>
+                                </tr>";
+                        }
+                         ?>
+                    </table>
 
 
 <?php include_once 'footer.php'; ?>
