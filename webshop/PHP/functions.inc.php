@@ -88,11 +88,10 @@ function loginUser($conn, $email, $password) {
         $_SESSION["email"] = $emailExists["email"];
         $_SESSION["vorname"] = $emailExists["vorname"];
         $_SESSION["warenkorb"] = array();
+        $_SESSION["anzahl"] = array();
 
 
         header("location: ../PHP/index.php?");
         exit();
     }
 }
-
-

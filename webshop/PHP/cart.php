@@ -43,6 +43,7 @@
                     <?php
                         for($i = 0 ; $i < count($_SESSION["warenkorb"]) ; $i++) {
                             $cID = $_SESSION["warenkorb"][$i];
+                            $cAmount = $_SESSION["anzahl"][$i];
                             $sql1 = "SELECT name, preis, anzahl FROM artikel WHERE aid = '$cID';";
                             $result = $conn -> query($sql1);
                             $data = mysqli_fetch_assoc($result);
@@ -53,7 +54,7 @@
                             echo "
                                 <tr>
                                     <td><span class='itemName'>$name</span></td>
-                                    <td><input type='number' class='itemAmount' value='1'></td>
+                                    <td><input type='number' class='itemAmount' value='$cAmount'></td>
                                     <td>$preis</td>
                                     <td></td>
                                     <form action='removeFromCart.php' method='post'>
@@ -70,6 +71,8 @@
                         <td style="background: #FFE047; font-weight: bold;"><span id="totalPrice"></span> €</td>
                     </tr>
                 </table>
+                <br>
+                <button type="button" name="placeOrder">Artikel Bestellen</button>
             </div>
         </div>
 

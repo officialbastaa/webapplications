@@ -1,6 +1,6 @@
 <?php
 
-include_once 'header.php'; 
+include_once 'header.php';
 require_once 'functions.inc.php';
 require_once 'setupDB.php';
 
@@ -18,7 +18,7 @@ require_once 'setupDB.php';
             $preis = $data["preis"];
             $beschreibung = $data["beschreibung"];
             $bild = '<img src="data:image/jpeg;base64,'.base64_encode($data["bild"]).'" height="500" width="450"/>';
-                                                                
+
             echo "
                 <div class='small-container single-product'>
                     <div class='row'>
@@ -29,7 +29,8 @@ require_once 'setupDB.php';
                             <h1>$name</h1>
                             <h4>$preis €</h4>
                             <form action='addToCart.php' method='post'>
-                                <button type='submit' name='add' value='$id' style='margin-bottom: 50px;'>Zum Warenkorb hinzufügen</button>      
+                                <input type='number' class='itemAmount' name='quantity' value='1'>
+                                <button type='submit' name='add' value='$id' style='margin-bottom: 50px;'>Zum Warenkorb hinzufügen</button>
                             </form>
                             <br>
                             <h3>Produkt Details</h3>

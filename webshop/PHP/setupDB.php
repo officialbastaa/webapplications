@@ -29,7 +29,7 @@ if (!$conn -> query($sql2)) {
     die('Tabelle-Erzeugen fehlgeschlagen: ' . $conn -> error);
 }
 
-$sql3 = "CREATE TABLE IF NOT EXISTs bestellungen(nid INT(6), aid INT(6), anzahl INT(4), bestelldatum DATE, FOREIGN KEY (nid) REFERENCES nutzer(nid), FOREIGN KEY (aid) REFERENCES artikel(aid))";
+$sql3 = "CREATE TABLE IF NOT EXISTs bestellungen(bid INT(6) AUTO_INCREMENT, nid INT(6), aid INT(6), anzahl INT(4), bestelldatum DATE, FOREIGN KEY (nid) REFERENCES nutzer(nid), FOREIGN KEY (aid) REFERENCES artikel(aid),PRIMARY KEY(bid))";
 if (!$conn -> query($sql3)) {
     die('Tabelle-Erzeugen fehlgeschlagen: ' . $conn -> error);
 }

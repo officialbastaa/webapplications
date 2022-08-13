@@ -11,10 +11,13 @@
             if ($_GET["error"] == "itemalreadyadded") {
                 echo "<h2 style='color: red; text-align: center'>Der Artikel befindet sich bereits im Warenkorb!</h2><br>";
             }
+            else if ($_GET["error"] == "quantitytoohigh") {
+                echo "<h2 style='color: red; text-align: center'>Leider haben wir diese Anzahl nicht auf lager, bitte wählen sie eine niedrigere Anzahl!</h2><br>";
+            }
             else if ($_GET["error"] == "itemadded") {
                 echo "<h2 style='color: green; text-align: center'>Der Artikel wurde zum Warenkorb hinzugefügt!</h2><br>";
             }
-            elseif ($_GET["error"] == "notloggedin") {
+            else if ($_GET["error"] == "notloggedin") {
                 echo "<h2 style='color: red; text-align: center'>Sie müssen sich einloggen um Artikel zum Warenkorb hinzuzufügen</h2><br>";
             }
 
