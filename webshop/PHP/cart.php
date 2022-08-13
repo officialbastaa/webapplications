@@ -10,6 +10,9 @@
             if ($_GET["error"] == "itemremoved") {
                 echo "<h2 style='color: green; text-align: center'>Der Artikel wurde aus dem Warenkorb entfernt!</h2><br>";
             }
+            else if ($_GET["error"] == "orderplaced") {
+                echo "<h2 style='color: green; text-align: center'>Bestellung wurde erfolgreich abgeschickt!</h2><br>";
+            }
         }
     ?>
             <!-- Personalization -->
@@ -72,7 +75,9 @@
                     </tr>
                 </table>
                 <br>
-                <button type="button" name="placeOrder">Artikel Bestellen</button>
+                <form action='order.php' method='post'>
+                  <button type="submit" name="placeOrder" style="float: right;">Artikel Bestellen</button>
+                </form>
             </div>
         </div>
 

@@ -49,27 +49,36 @@ include('setupDB.php');
                     <table>
                         <tr>
                             <th>Email</th>
-                            <th>Artikel</th>
-                            <th>Anzahl</th>
+                            <th></th>
+                            <th>Bestelldatum</th>
                             <th></th>
                         </tr>
                         <?php
 
-                        $sql1 = "SELECT artikel.name, bestellungen.anzahl, preis, nutzer.email, bestellungen.bestelldatum FROM bestellungen, artikel, nutzer WHERE bestellungen.aid = artikel.aid && bestellungen.nid = nutzer.nid;";
+                        $sql1 = "SELECT artikel.name, bestellungen.anzahl, nutzer.email, bestellungen.bid, bestellungen.bestelldatum FROM bestellungen, artikel, nutzer WHERE bestellungen.aid = artikel.aid && bestellungen.nid = nutzer.nid;";
                         $result = $conn -> query($sql1);
                         while($row = mysqli_fetch_assoc($result)){
                           $email = $row["email"];
                           $artikelname = $row["name"];
                           $anzahl = $row["anzahl"];
+                          $bid = $row["bid"];
+                          $date = $row["bestelldatum"];
                           echo "<tr>
                                   <td>$email</td>
-                                  <td>$artikelname</td>
-                                  <td>$anzahl</td>
-                                  <td><button type='button' name='orderDetails'>Details</button></td>
+                                  <td></td>
+                                  <td>$date</td>
+                                  <td>
+                                    <form action='order-detail.php' method='post'>
+                                      <button type='submit' name='orderDetails' value='$bid'>Details</button>
+                                    </form>
+                                  </td>
                                 </tr>";
                         }
                          ?>
                     </table>
+
+
+
 
                     <!-- Articles -->
                     <div class="grid-title">
