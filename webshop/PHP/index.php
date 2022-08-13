@@ -38,37 +38,6 @@
         </div>
 
         <!-- Sub Banner -->
-        <div class="sub-banner">
-            <div class="row">
-                <div class="col-3" id="right">
-                    <p>In Deutschland geröstet <img src="../images/sun.png" alt="Sun" style="height: 20px; width: 20px;"></p>
-                </div>
-                <div class="col-3" id="center">
-                    <div class="row">
-                        <div class="col-mini-3" id="right">
-                            <p>4.8</p>
-                        </div>
-                        <div class="col-mini-3">
-                            <div class="rating">
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star-o"></i>
-                            </div>
-                        </div>
-                        <div class="col-mini-3" id="left">
-                            <p>10.547 Bewertungen</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-3" id="left">
-                    <p>USDA Organic-Zertifiziert <img src="../images/leaf.png" alt="Leaf" style="height: 20px; width: 20px;"></p>
-                </div>
-            </div>
-        </div>
-
-            <hr style="width: 1200px; margin: auto; margin-bottom: 50px;">
 
             <!-- Inforamtion -->
             <div class="small-container">
@@ -107,7 +76,7 @@
                             <h1>FOMO?</h1>
                             <small>Du willst auch den leckersten Kaffee aus dem wunderschönen Deutschland probieren? Dann warte nicht lange ab und tauche ein in die Welt von Student Coffee! Für jeden Geschmack gibt es die passende Röstung. Probiere es aus!</small>
                             <br>
-                            <a href="products.php" class="btn">Buy Now &#8594;</a>
+                            <a href="signup.php" class="btn">Jetzt Registrieren &#8594;</a>
                         </div>
                     </div>
                 </div>
