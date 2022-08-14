@@ -3,73 +3,45 @@ include('setupDB.php');
 require_once ('functions.inc.php');
 
 
-// Holen: Name, Vorname, Email, Passwort
-$vorname = $_POST['vorname'];
-$name = $_POST['name'];
-$email = $_POST['email'];
-$password = $_POST['passwort'];
-$pwdRepeat = $_POST["confirmPasswort"];
+if (isset($_REQUEST["name"]) && isset($_REQUEST["lastName"]) && isset($_REQUEST["email"]) && isset($_REQUEST["password"]) && isset($_REQUEST["confirmPasswort"]) ) {
+  // Holen: Name, Vorname, Email, Passwort
+  $vorname = $_REQUEST["name"];
+  $name = $_REQUEST["lastName"];
+  $email = $_REQUEST["email"];
+  $password = $_REQUEST["password"];
+  $pwdRepeat = $_REQUEST["confirmPasswort"];
 
-
-// Leere Eingabe
-if (emptyInputSignup($vorname, $name, $email, $password, $pwdRepeat) !== false) {
-    header("location: ../PHP/signup.php?error=emptyinput");
-    exit();
-}
-// Email fehlerhaft
-if (invalidEmail($email) !== false) {
-    header("location: ../PHP/signup.php?error=invalidemail");
-    exit();
-}
-// User existiert bereits
-if (emailExists($conn, $email) !== false){
-    header("location: ../PHP/signup.php?error=emailtaken");
-    exit();
-}
-
-
-// Preparation of insert statement
-$tname = 'nutzer';
-$name1 = 'name';
-$name2 = 'vorname';
-$name3 = 'email';
-$name4= 'password';
-$ins = "INSERT INTO $tname($name1, $name2, $name3, $name4) VALUES (?, ?, ?, ?)";
-$ps = $conn -> prepare($ins);
-
-
-// // Function to insert a new user
-function insertUser($p, $n1, $n2, $n3, $n4) {
-    $p -> bind_param('ssss', $n1, $n2, $n3, $n4);
-    if (!$p -> execute()) {
-        die("Hinzufügen fehlgeschlagen: " . $conn -> error);
-    }
-    echo ($n1 . " " . $n2 .  " wurde erfolgreich hinzugefügt! <br>");
-}
-
-
-if ($result = $conn->query("SELECT * FROM $tname LIMIT 1")){
-
-    if (!$obj = $result->fetch_object()){
-
-      $g1 = 'Admin';
-      $g2 = 'Admin';
-      $g3 = 'admin@minishop.de';
-      $g4 = '12345Aa';
-
-      insertUser($ps, $g1, $g2, $g3, $g4);
-      echo "<br>";
-    }
+  if (invalidEmail($email) !== false) {
+      echo '{"nachricht": "Wähle eine echte Email Adresse"}';
+      exit();
   }
 
-$f1 = $name;
-$f2 = $vorname;
-$f3 = $email;
-$f4 = $password;
+  if (emailExists($conn, $email) !== false){
+      echo '{"nachricht": "Es gibt schon ein Konto mit dieser Email"}';
+      exit();
+  }
 
+  // Function to insert a new user
+  function insertUser($p, $n1, $n2, $n3, $n4) {
+      $p -> bind_param('ssss', $n1, $n2, $n3, $n4);
+      if (!$p -> execute()) {
+          die("Hinzufügen fehlgeschlagen: " . $conn -> error);
+      }
+      echo '{"nachricht": "Konto wurde erfolgreich erstellt!"}';
+  }
 
-// Execution of the insertion function
-insertUser($ps, $f1, $f2, $f3, $f4);
+  // Preparation of insert statement
+  $tname = 'nutzer';
+  $name1 = 'name';
+  $name2 = 'vorname';
+  $name3 = 'email';
+  $name4= 'password';
+  $ins = "INSERT INTO $tname($name1, $name2, $name3, $name4) VALUES (?, ?, ?, ?)";
+  $ps = $conn -> prepare($ins);
+
+  insertUser($ps, $name, $vorname, $email, $password);
+
+}
 
 // close the connection
 $conn -> close();

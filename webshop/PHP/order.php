@@ -1,13 +1,6 @@
 <?php
 include_once 'header.php';
 include('setupDB.php');
-/*
-$nid = $_POST[];
-$aid = $_POST[];
-$anzahl = $_POST[];
-$bestelldatum = date("d.m.y h:i:s");
-*/
-
 
 //preparation of insert statement
 $tname = 'bestellungen';
@@ -61,18 +54,6 @@ if (isset($_POST["placeOrder"])) {
   exit();
 
 }
-
-
-
-
-
-/*
-//execution of the insertion function
-insertOrder($ps, $f1, $f2, $f3, $f4);
-*/
-
-
-
 
 
 // close the connection

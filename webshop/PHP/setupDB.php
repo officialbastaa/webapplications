@@ -17,8 +17,6 @@ else {
     $show .= "Die Verbindung zur Datenbank war erfolgreich!";
 }
 
-
-
 $sql1 = "CREATE TABLE IF NOT EXISTS nutzer(nid INT(6) AUTO_INCREMENT, name VARCHAR(20), vorname VARCHAR(20), email VARCHAR(30), password VARCHAR(20), PRIMARY KEY(nid))";
 if (!$conn -> query($sql1)) {
     die('Tabelle-Erzeugen fehlgeschlagen: ' . $conn -> error);
@@ -33,3 +31,14 @@ $sql3 = "CREATE TABLE IF NOT EXISTs bestellungen(bid INT(6) AUTO_INCREMENT, nid 
 if (!$conn -> query($sql3)) {
     die('Tabelle-Erzeugen fehlgeschlagen: ' . $conn -> error);
 }
+
+if ($result = $conn->query("SELECT * FROM nutzer LIMIT 1;")){
+
+    if (!$obj = $result->fetch_object()){
+
+      $sql4 = "INSERT INTO `nutzer` (`nid`, `name`, `vorname`, `email`, `password`) VALUES (NULL, 'Admin', 'Admin', 'admin@minishop.de', '12345Aa');";
+      $result = $conn -> query($sql4);
+      echo "Datenbanken und Admin-Zugang wurden erfolgreich erstellt!";
+
+    }
+  }
