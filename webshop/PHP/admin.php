@@ -15,6 +15,12 @@ include('setupDB.php');
                   if ($_GET["error"] == "articledeleted") {
                       echo "<h2 style='color: green; text-align: center'>Artikel wurde gelöscht.</h2><br>";
                   }
+                  else if ($_GET["error"] == "orderdeleted") {
+                      echo "<h2 style='color: green; text-align: center'>Bestellung wurde gelöscht.</h2><br>";
+                  }
+                  else if ($_GET["error"] == "orderconfirmed") {
+                    echo "<h2 style='color: green; text-align: center'>Bestellung wurde bestätigt!</h2><br>";
+                  }
                 }
 
                  ?>

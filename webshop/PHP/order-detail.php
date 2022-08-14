@@ -6,15 +6,6 @@ include('setupDB.php');
 <!-- Admin Information -->
                         <?php
 
-                          if (isset($_GET["error"])) {
-                            if ($_GET["error"] == "orderdeleted") {
-                                echo "<h2 style='color: green; text-align: center'>Bestellung wurde gelöscht.</h2><br>";
-                            }
-                            if ($_GET["error"] == "orderconfirmed") {
-                              echo "<h2 style='color: green; text-align: center'>Bestellung wurde bestätigt!</h2><br>";
-                            }
-                          }
-
                           if (isset($_POST["userOrderDetails"])){
                             $bid = $_POST["userOrderDetails"];
 
@@ -172,7 +163,7 @@ include('setupDB.php');
                             $sql3 = "DELETE FROM bestellungen WHERE bid = '$bid';";
                             $result = $conn -> query($sql3);
 
-                            header("location: ../PHP/order-detail.php?error=orderdeleted");
+                            header("location: ../PHP/admin.php?error=orderdeleted");
                             exit();
                           }
 
@@ -181,7 +172,7 @@ include('setupDB.php');
                             $sql1 = "UPDATE bestellungen SET bestaetigt = 'Ja' WHERE bid = '$bid';";
                             $result = $conn -> query($sql1);
 
-                            header("location: ../PHP/order-detail.php?error=orderconfirmed");
+                            header("location: ../PHP/admin.php?error=orderconfirmed");
                             exit();
 
 

@@ -8,10 +8,20 @@
 <?php
         if (isset($_GET["error"])) {
             if ($_GET["error"] == "itemremoved") {
-                echo "<h2 style='color: green; text-align: center'>Der Artikel wurde aus dem Warenkorb entfernt!</h2><br>";
+                echo "<h2 id='response' style='color: green; text-align: center'>Der Artikel wurde aus dem Warenkorb entfernt!</h2><br>";
             }
             else if ($_GET["error"] == "orderplaced") {
                 echo "<h2 style='color: green; text-align: center'>Bestellung wurde erfolgreich abgeschickt!</h2><br>";
+            }
+            else if ($_GET["error"] == "emptycart") {
+                echo "<h2 style='color: red; text-align: center'>Bestellung konnte nicht abgeschickt werden: Keine Artikel im Warenkorb</h2><br>";
+            }
+            else if ($_GET["error"] == "cartamountstoohigh") {
+                echo "<h2 style='color: red; text-align: center'>Wir haben </h2><br>";
+            }
+            else {
+              $artikelname = $_GET["error"];
+              echo "<h2 style='color: red; text-align: center'>Wir haben von $artikelname nicht mehr diese Menge im Lager. Bitte wähle eine kleinere Anzahl</h2><br>";
             }
         }
     ?>
@@ -67,6 +77,7 @@
                             ";
                         }
                     ?>
+
                 </table>
                 <table>
                     <tr>
@@ -76,8 +87,38 @@
                 </table>
                 <br>
                 <form action='order.php' method='post'>
-                  <button type="submit" name="placeOrder" style="float: right;">Artikel Bestellen</button>
+                  <button type="submit" name="placeOrder" id="placeOrder" style="float: right;">Artikel Bestellen</button>
                 </form>
+                <script>
+                    window.addEventListener("load", init);
+
+                    function init() {
+                        document.getElementById("placeOrder").addEventListener("click", updateArticleQuantity);
+                    }
+
+                    function updateArticleQuantity() {
+                      var cartAmount = [];
+                      var amountInputs = document.getElementsByClassName("itemAmount")
+                      for (var i=0; i < amountInputs.length; i++){
+                        var currentInput = amountInputs[i]
+                        var currentAmount = currentInput.value;
+                        cartAmount.push(currentAmount);
+
+                      }
+
+                      var packagedArray = JSON.stringify(cartAmount);
+
+                      var ajaxRequest = new XMLHttpRequest();
+                      ajaxRequest.addEventListener("error", ajaxFehler);
+                      ajaxRequest.open("post", "updateOrderAmount.php");
+                      var daten = new FormData();
+                      daten.append("newCartAmount", packagedArray);
+                      ajaxRequest.send(daten);
+                    }
+                    function ajaxFehler(event) {
+                        alert(event.target.statusText);
+                    }
+                </script>
             </div>
         </div>
 

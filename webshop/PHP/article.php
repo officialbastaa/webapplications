@@ -19,7 +19,7 @@ if (isset($_REQUEST["produktname"]) && isset($_REQUEST["preis"]) && isset($_REQU
       if (!mysqli_query($p, $sql)) {
           die("Hinzufügen des Bildes ist fehlgeschlagen: " . mysqli_error());
       }
-      echo '{"nachricht": "Jo Klappt"}';
+      echo '{"nachricht": "Artikel wurde erfolgreich hinzugefügt"}';
     }
 
 
