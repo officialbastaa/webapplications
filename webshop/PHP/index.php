@@ -8,7 +8,7 @@
               echo "<h2 text-align: center'>Ihr Konto wurde erfolgreich gelöscht.</h2><br>";
           }
           elseif ($_GET["error"] == "notloggedin") {
-              echo "<h2 style='color: red; text-align: center'>Sie müssen sich einloggen um ihren Warenborb anzusehen</h2><br>";
+              echo "<h2 style='color: red; text-align: center'>Sie müssen sich einloggen um ihren Warenkorb anzusehen</h2><br>";
           }
       }
 
